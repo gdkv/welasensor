@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+    <h1 class="display-5">Добавление зоны</h1>
+    <p class="card-description">
+      Прежде чем добавить датчики нужно добавить зоны в которых датчики
+      будут располагаться.
+    </p>
+    <form class="forms-sample" action="{{request.path}}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Название зоны</label>
+        <input type="text" class="form-control" name="name" value="" placeholder="Цех обработки" />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Комментарии</label>
+        <textarea type="text" class="form-control" name="notes" value="" placeholder="Здесь можно написать какие то дополнительные комментарии"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success mr-2">Добавить</button>
+    </form>
+    </div>
+  </div>
+{% endblock content %}

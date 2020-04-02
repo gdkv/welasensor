@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+    <h1 class="display-5">Добавление датчика</h1>
+    <p class="card-description">
+      Для того чтобы данные с датчика попадали в систему заполните его MAC
+      адрес и выбирете зону в которой он располагается.<br />Так же можно присвоить
+      датчику имя.
+    </p>
+    <form class="forms-sample" action="{{request.path}}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Выбирете зону, если нужной зоны нет, то можно ее <a href="{% url 'zone_add' %}">добавить</a></label>
+        {{ form.zone }}
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">MAC адрес</label>
+        <input type="text" class="form-control" name="mac" value="" placeholder="00-00-00-00-00" />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Название датчика</label>
+        <input type="text" class="form-control" name="name" value="" placeholder="Датчик в центре зала" />
+      </div>
+      <button type="submit" class="btn btn-success mr-2">Добавить</button>
+    </form>
+    </div>
+  </div>
+{% endblock content %}
