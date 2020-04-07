@@ -1,0 +1,734 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: local("Gilroy Light"), local("Gilroy-Light"), url(https://hb.bizmrg.com/fonts/gilroy/300.woff2) format("woff2"), url(https://hb.bizmrg.com/fonts/gilroy/300.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: local("Gilroy SemiBold"), local("Gilroy-SemiBold"), url(https://hb.bizmrg.com/fonts/gilroy/600.woff2) format("woff2"), url(https://hb.bizmrg.com/fonts/gilroy/600.woff) format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+.ps__rail-x {
+  display: none;
+  opacity: 0;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+  -webkit-transition: background-color 0.2s linear, opacity 0.2s linear;
+  height: 15px;
+  bottom: 0px;
+  position: absolute;
+}
+
+.ps__rail-x:hover,
+.ps__rail-x:focus,
+.ps__rail-x.ps--clicking {
+  background-color: #eee;
+  opacity: 0.9;
+}
+
+.ps__rail-y {
+  display: none;
+  opacity: 0;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+  -webkit-transition: background-color 0.2s linear, opacity 0.2s linear;
+  width: 15px;
+  right: 0;
+  position: absolute;
+}
+
+.ps__rail-y:hover,
+.ps__rail-y:focus,
+.ps__rail-y.ps--clicking {
+  background-color: #eee;
+  opacity: 0.9;
+}
+
+.ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color 0.2s linear, height 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s linear, height 0.2s ease-in-out;
+  height: 6px;
+  bottom: 2px;
+  position: absolute;
+}
+
+.ps__thumb-y {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color 0.2s linear, width 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s linear, width 0.2s ease-in-out;
+  width: 6px;
+  right: 2px;
+  position: absolute;
+}
+
+@supports (-ms-overflow-style: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: transparent;
+}
+
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 0.6;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+  background-color: #999;
+  height: 11px;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #999;
+  width: 11px;
+}
+
+body {
+  font-family: Gilroy;
+  font-weight: 100;
+}
+
+a,
+input,
+button {
+  outline: none;
+}
+
+a {
+  color: #FC5C7D;
+  text-decoration: none;
+}
+
+.btn {
+  min-width: 200px;
+  height: 35px;
+  background: #6B81FA;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 15.5px;
+  line-height: 35px;
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.btn-red {
+  background: #FC5C7D;
+}
+
+main {
+  min-height: 100vh;
+  padding: 30px 430px 80px 30px;
+}
+
+main .top {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0 35px;
+}
+
+main .top .left {
+  max-width: 416px;
+}
+
+main .top .left a {
+  transition: all 0.5s ease 0.5s;
+  color: #DFDFDF;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, transparent 55%, #6B81FA 0);
+}
+
+main .top .left a:hover {
+  background-image: none;
+  color: #FFFFFF;
+}
+
+main .welasensor {
+  width: 166px;
+  height: 164.57px;
+  position: relative;
+}
+
+main .welasensor .corpus {
+  position: absolute;
+  background: 75px 0/auto 50px no-repeat url(/assets/images/LOGO_on_welasensor.png) #FDFDFD;
+  width: 166px;
+  height: 130.94px;
+  left: 0;
+  bottom: 0;
+  border-radius: 30px;
+}
+
+main .welasensor .plug {
+  position: absolute;
+  width: 72.98px;
+  height: 33.63px;
+  left: calc(50% - 36.49px);
+  top: 0;
+  background: linear-gradient(180deg, #CCCCCC 0%, #BBBBBB 100%);
+  border-radius: 5px 5px 0px 0px;
+}
+
+main .welasensor .indicator {
+  transition: background-color 2s ease 0.5s;
+  width: 10px;
+  height: 10px;
+  left: 20px;
+  bottom: 20px;
+  position: absolute;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+}
+
+main .welasensor:hover .indicator {
+  transition: background-color 0.5s ease 0.5s;
+  background-color: #6A82FB;
+}
+
+main.welcome {
+  background: linear-gradient(90deg, #FC5C7D 0%, #6A82FB 100%);
+}
+
+main.welcome aside {
+  position: fixed;
+  width: 400px;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+main.app {
+  background: #2A2A2A;
+}
+
+main.app aside {
+  position: fixed;
+  width: 350px;
+  height: 95vh;
+  left: 2.5vh;
+  top: 2.5vh;
+  background: #000000;
+  border-radius: 30px;
+  padding: 46px 38px;
+  box-sizing: border-box;
+}
+
+main.app aside a {
+  text-decoration: none;
+}
+
+main.app aside .top {
+  margin: 0 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+main.app aside .top .plan {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+main.app aside .quick-links a,
+main.app aside .quick-links button,
+main.app aside .logout a,
+main.app aside .logout button {
+  width: 100%;
+  height: 35px;
+  background: #6B81FA;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 15.5px;
+  line-height: 35px;
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+main.app aside .main a {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15.5px;
+  line-height: 18px;
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 40px;
+}
+
+main.app aside .logout {
+  margin-top: 70px;
+}
+
+main.app aside .logout button {
+  background: #FC5C7D;
+  border: medium none;
+  font-family: Gilroy;
+}
+
+main header {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+main header .logo {
+  margin: 0 130px 0 0;
+}
+
+main header nav a {
+  transition: color 0.2s ease 0.2s;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #DFDFDF;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+main header nav a:not(:first-child) {
+  margin-left: 63px;
+}
+
+main header nav a:hover {
+  color: #FFFFFF;
+}
+
+main h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 31.5px;
+  line-height: 38px;
+  color: #FFFFFF;
+  margin-bottom: 23px;
+}
+
+main p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+main p.red {
+  color: #FC5C7D;
+}
+
+main .cookie {
+  position: fixed;
+  width: 600px;
+  height: 38px;
+  left: calc(50% - 300px);
+  bottom: 20px;
+  background-color: rgba(223, 223, 223, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 38px;
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+main .cookie-icon img {
+  width: 24px;
+  margin: 6px 0 0;
+}
+
+main .cookie-text a {
+  color: #FC5C7D;
+  text-decoration: none;
+}
+
+main .cookie-close img {
+  margin: 8px 0 0;
+}
+
+main .items {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .items .item {
+  padding: 26px 21px 20px;
+  width: 260px;
+  min-height: 380px;
+  background: #FDFDFD;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+main .items .item-2x {
+  width: 560px;
+}
+
+main .items .item-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 27px;
+}
+
+main .items .item-text {
+  min-height: 265px;
+}
+
+main .items .item-text p {
+  color: #000000;
+  margin-bottom: 20px;
+  line-height: 22px;
+}
+
+main .items .item-text p.red {
+  color: #FC5C7D;
+}
+
+main .items .item-price {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 22px;
+  color: #000000;
+}
+
+main .items .item-price span {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.form {
+  text-align: center;
+}
+
+.form-header {
+  font-weight: 600;
+  font-size: 22.5px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.form-content {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-content form input {
+  width: 320px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.39);
+  border-radius: 20px;
+  border: medium none;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 17px;
+  color: #666666;
+  margin-bottom: 27px;
+  padding: 0 22px 0;
+  box-sizing: border-box;
+}
+
+.form-content form .form-row {
+  position: relative;
+}
+
+.form-content form .form-row .input-badge {
+  position: absolute;
+  right: 26px;
+  padding: 12px 0 0;
+  margin: 3px;
+  width: 27px;
+  height: 27px;
+  box-sizing: border-box;
+}
+
+.form-content form .form-row .input-badge_bg {
+  right: 0;
+  padding: 5px;
+  background-color: #BBBBBB;
+  border-radius: 20px;
+}
+
+.form-content form button {
+  height: 35px;
+  background: #A173CA;
+  border-radius: 20px;
+  font-family: Gilroy;
+  display: block;
+  padding: 0 55px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 19px auto;
+}
+
+.form-content form a {
+  font-size: 15px;
+  color: #FC5C7D;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.question {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 33px;
+}
+
+.question-title {
+  font-size: 22px;
+  color: #2A2A2A;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, transparent 65%, rgba(107, 129, 250, 0.6) 0);
+}
+
+.question-title:hover {
+  background-image: none;
+  color: #000000;
+}
+
+.question .answer {
+  display: none;
+}
+
+.question .answer p {
+  font-size: 19px;
+  font-weight: 300;
+  color: #2A2A2A;
+  margin-top: 20px;
+}
+
+.question .answer.active {
+  display: block;
+}
+
+.section {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+  font-weight: 600;
+  margin-bottom: 33px;
+}
+
+.section-title {
+  font-size: 22px;
+  color: #2A2A2A;
+  text-decoration: none;
+  display: inline-block;
+  background-image: linear-gradient(to bottom, transparent 65%, rgba(107, 129, 250, 0.6) 0);
+}
+
+.section-description p {
+  font-size: 19px;
+  font-weight: 300;
+  color: #2A2A2A;
+  margin-top: 20px;
+}
+
+.account {
+  text-align: center;
+}
+
+.account h4 {
+  font-weight: 600;
+  font-size: 22.5px;
+}
+
+.account p {
+  color: black;
+  margin-top: 10px;
+}
+

@@ -1,10 +1,4 @@
 {
     "/assets/js/app.js": "/assets/js/app.js",
-    "/assets/js/misc.js": "/assets/js/misc.js",
-    "/assets/js/vendor.bundle.base.js": "/assets/js/vendor.bundle.base.js",
-    "/assets/css/vendor.bundle.base.css": "/assets/css/vendor.bundle.base.css",
-    "/assets/css/vendor.bundle.addons.css": "/assets/css/vendor.bundle.addons.css",
-    "/assets/css/materialdesignicons.min.css": "/assets/css/materialdesignicons.min.css",
-    "/assets/css/style.css": "/assets/css/style.css",
     "/assets/css/app.css": "/assets/css/app.css"
 }

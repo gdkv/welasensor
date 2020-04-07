@@ -11,13 +11,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/vendor.bundle.base.js', 'public/assets/js')
-    .js('resources/js/misc.js', 'public/assets/js')
-    .js('resources/js/app.js', 'public/assets/js');
-
-
-mix.sass('resources/sass/vendor.bundle.base.scss', 'public/assets/css')
-    .sass('resources/sass/vendor.bundle.addons.scss', 'public/assets/css')
-    .sass('resources/sass/materialdesignicons.min.scss', 'public/assets/css')
-    .sass('resources/sass/style.scss', 'public/assets/css')
-    .sass('resources/sass/app.scss', 'public/assets/css');
+mix.js('resources/js/app.js', 'public/assets/js')
+   .sass('resources/sass/app.scss', 'public/assets/css');
