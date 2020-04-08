@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'fonts';
 @import 'ps';
+@import 'sensors';
 
 body {
     font-family: Gilroy;
@@ -56,50 +57,6 @@ main {
                     background-image: none;
                     color: #FFFFFF;
                 }
-            }
-        }
-    }
-
-    .welasensor {
-        width: 166px;
-        height: 164.57px;
-        position: relative;
-
-        .corpus {
-            position: absolute;
-            background: 75px 0/auto 50px no-repeat url(/assets/images/LOGO_on_welasensor.png) #FDFDFD;
-            width: 166px;
-            height: 130.94px;
-            left: 0;
-            bottom: 0;
-            border-radius: 30px;
-
-        }
-        .plug {
-            position: absolute;
-            width: 72.98px;
-            height: 33.63px;
-            left: calc(50% - 36.49px);
-            top: 0;
-            background: linear-gradient(180deg, #CCCCCC 0%, #BBBBBB 100%);
-            border-radius: 5px 5px 0px 0px;
-        }
-
-        .indicator {
-            transition: background-color 2s ease .5s;
-            width: 10px;
-            height: 10px;
-            left: 20px;
-            bottom: 20px;
-            position: absolute;
-            background-color: #C4C4C4;
-            border-radius: 50%;
-        }
-
-        &:hover {
-            .indicator {
-                transition: background-color .5s ease .5s;
-                background-color: #6A82FB;
             }
         }
     }

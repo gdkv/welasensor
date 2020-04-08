@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Sensor;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
@@ -13,6 +14,6 @@ class AppController extends Controller
 
     public function index()
     {
-        return view('app.index');
+        return view('app.index', ['sensors' => Sensor::all()]);
     }
 }

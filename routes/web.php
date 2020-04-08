@@ -55,6 +55,12 @@ Route::get('/downloads', function () {
 
 Route::prefix('app')->group(function () {
 
+    Route::prefix('sensor')->group(function () {
+        Route::get('/', 'SensorController@index')->name('sensors_list');
+        Route::get('/add', 'SensorController@add')->name('sensor_add');
+        Route::get('/view', 'SensorController@view')->name('sensor_view');
+    });
+
     Route::get('/', 'AppController@index')->name('app');
 
 });

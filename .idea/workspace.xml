@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_08_133102_edit_zone_in_users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_08_134630_alter_colomns_in_sensor_type.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/SensorSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_sensors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app/sensors/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app/sensors/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/SensorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SensorType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_08_084356_create_sensor_type_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_08_084356_create_sensor_type_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Sensor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sensor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DataSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DataSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SensorTypeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SensorTypeSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/buy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/buy.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/errors/500.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,6 +171,9 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -184,7 +186,7 @@
       <updated>1585673712748</updated>
       <workItem from="1585673714247" duration="13494000" />
       <workItem from="1586121957312" duration="3550000" />
-      <workItem from="1586175669604" duration="52197000" />
+      <workItem from="1586175669604" duration="63458000" />
     </task>
     <servers />
   </component>
@@ -193,5 +195,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586380418665">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877@0.23.1440.877" timestamp="1586380418665" />
+    <state x="529" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586376905031">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="529" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1586376905031" />
   </component>
 </project>

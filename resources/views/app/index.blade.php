@@ -1,8 +1,10 @@
 @extends('app.base')
 @section('content')
 <nav class="sensors">
-    <div class="online active">Kitchen</div>
-    <div class="online">Bedroom</div>
-    <div class="offline">Living room</div>
+    @foreach($sensors as $sensor)
+        <div class="{{ $sensor->isOnline() ? 'online' : 'offline' }} {{ $loop->first ? 'active' : '' }}">
+            {{ $sensor->name }}
+        </div>
+    @endforeach
 </nav>
 @endsection

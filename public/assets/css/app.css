@@ -256,6 +256,188 @@ table {
   width: 11px;
 }
 
+.sensors {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sensors div {
+  width: 200px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 20px;
+  background: #111111;
+  border-radius: 10px;
+  font-weight: 300;
+  font-size: 13px;
+  color: #DFDFDF;
+  padding: 0 19px;
+  box-sizing: border-box;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sensors div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 13px;
+  right: 11px;
+  width: 6px;
+  height: 6px;
+  background: #6B81FA;
+  border-radius: 3px;
+}
+
+.sensors div.offline::after {
+  background: #FC5C7D;
+}
+
+.sensors div.active {
+  background: #676767;
+}
+
+.welasensor {
+  width: 166px;
+  height: 164.57px;
+  position: relative;
+}
+
+.welasensor .corpus {
+  position: absolute;
+  background: 75px 0/auto 50px no-repeat url(/assets/images/LOGO_on_welasensor.png) #FDFDFD;
+  width: 166px;
+  height: 130.94px;
+  left: 0;
+  bottom: 0;
+  border-radius: 30px;
+}
+
+.welasensor .plug {
+  position: absolute;
+  width: 72.98px;
+  height: 33.63px;
+  left: calc(50% - 36.49px);
+  top: 0;
+  background: linear-gradient(180deg, #CCCCCC 0%, #BBBBBB 100%);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.welasensor .indicator {
+  transition: background-color 2s ease 0.5s;
+  width: 10px;
+  height: 10px;
+  left: 20px;
+  bottom: 20px;
+  position: absolute;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+}
+
+.welasensor:hover .indicator {
+  transition: background-color 0.5s ease 0.5s;
+  background-color: #6A82FB;
+}
+
+main.app {
+  padding: 30px 30px 30px 400px;
+}
+
+main.app h1 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 31.5px;
+  line-height: 38px;
+  color: #FFFFFF;
+}
+
+.sensors-wrapper .sensors-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sensors-wrapper .sensors-list .item {
+  width: 166px;
+  margin-bottom: 40px;
+}
+
+.sensors-wrapper .sensors-list .item .welasensor-info {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.sensors-wrapper .sensors-list .item .welasensor-info-mac {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #888888;
+  text-transform: uppercase;
+}
+
+.sensors-wrapper .sensors-list .item .welasensor-info-name {
+  font-weight: 300;
+  font-size: 16.5px;
+  line-height: 19px;
+  color: #FDFDFD;
+  margin: 4px 0;
+}
+
+.sensors-wrapper .sensors-list .item .welasensor-info-time {
+  font-weight: 300;
+  font-size: 11.5px;
+  line-height: 13px;
+  color: #888888;
+}
+
+.sensors-wrapper .sensors-list .add-sensor_form {
+  width: 370px;
+  height: 350px;
+  background: #343434;
+  border-radius: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.sensors-wrapper .sensors-list .add-sensor_form h1 {
+  font-family: Gilroy;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: #6A82FB;
+}
+
+.sensors-wrapper .sensors-list .add-sensor_form .form-content {
+  text-align: left;
+}
+
+.sensors-wrapper .sensors-list .add-sensor_form .form-content form input {
+  background: #676767;
+  color: #DFDFDF;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.sensors-wrapper .sensors-list .add-sensor_form .form-content form .form-row .input-badge_bg {
+  top: 2px;
+  text-align: center;
+}
+
+.sensors-wrapper .sensors-list .add-sensor_form .form-content form button {
+  width: 100%;
+  background: #FC5C7D;
+  border-radius: 5px;
+}
+
+.sensors-wrapper .sensors-list .add-sensor_form .form-content form p {
+  margin-top: 5px;
+}
+
 body {
   font-family: Gilroy;
   font-weight: 100;
@@ -316,48 +498,6 @@ main .top .left a {
 main .top .left a:hover {
   background-image: none;
   color: #FFFFFF;
-}
-
-main .welasensor {
-  width: 166px;
-  height: 164.57px;
-  position: relative;
-}
-
-main .welasensor .corpus {
-  position: absolute;
-  background: 75px 0/auto 50px no-repeat url(/assets/images/LOGO_on_welasensor.png) #FDFDFD;
-  width: 166px;
-  height: 130.94px;
-  left: 0;
-  bottom: 0;
-  border-radius: 30px;
-}
-
-main .welasensor .plug {
-  position: absolute;
-  width: 72.98px;
-  height: 33.63px;
-  left: calc(50% - 36.49px);
-  top: 0;
-  background: linear-gradient(180deg, #CCCCCC 0%, #BBBBBB 100%);
-  border-radius: 5px 5px 0px 0px;
-}
-
-main .welasensor .indicator {
-  transition: background-color 2s ease 0.5s;
-  width: 10px;
-  height: 10px;
-  left: 20px;
-  bottom: 20px;
-  position: absolute;
-  background-color: #C4C4C4;
-  border-radius: 50%;
-}
-
-main .welasensor:hover .indicator {
-  transition: background-color 0.5s ease 0.5s;
-  background-color: #6A82FB;
 }
 
 main.welcome {
