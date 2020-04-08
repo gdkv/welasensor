@@ -265,6 +265,7 @@ a,
 input,
 button {
   outline: none;
+  border: medium;
 }
 
 a {

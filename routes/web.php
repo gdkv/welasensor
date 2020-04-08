@@ -36,9 +36,7 @@ Route::get('/logout', function (){
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/buy', function () {
-    return view('main.buy');
-});
+Route::get('/buy', 'HomeController@buy')->name('buy');
 
 Route::get('/about', function () {
     return view('main.about');

@@ -1,6 +1,6 @@
 <div class="items">
     @foreach($items as $item)
-        <div class="item {{ isset($item['itemBig']) ? 'item-2x' : '' }}">
+        <div class="item {{ $item->isBig ? 'item-2x' : '' }}">
             <div class="item-title">{{ $item->name }}</div>
             <div class="item-text">
                 {!! $item->description !!}

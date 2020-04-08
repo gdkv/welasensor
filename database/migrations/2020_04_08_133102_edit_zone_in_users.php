@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSensorTypeTable extends Migration
+class EditZoneInUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateSensorTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('sensor_type', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('text');
-            $table->integer('price');
-            $table->boolean('isBig');
-            $table->timestamps();
+        Schema::table('sensor', function (Blueprint $table) {
+            $table->unsignedBigInteger('zone_id')->nullable()->default(NULL)->change();
         });
     }
 
@@ -30,6 +25,8 @@ class CreateSensorTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sensor_type');
+        Schema::table('sensor', function (Blueprint $table) {
+            $table->unsignedBigInteger('zone_id')->nullable(false)->change();
+        });
     }
 }

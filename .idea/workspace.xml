@@ -2,97 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Limit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Plan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Sensor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Zone.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_135557_create_zone_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_140243_create_sensor_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_141855_create_data_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_142900_create_limit_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_144027_create_plan_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_145150_add_data_to_users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_07_173822_add_default_value_plan_to_users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/DataSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PlanSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/LOGO-app.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/password_hide.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/password_show.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/base.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/user.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/base.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/buy.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/downloads.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/howto.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/items.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/title.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/welasensor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/welasensor.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_08_133102_edit_zone_in_users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_08_134630_alter_colomns_in_sensor_type.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/SensorSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/SensorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SensorType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_08_084356_create_sensor_type_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_08_084356_create_sensor_type_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DataSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DataSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/SensorTypeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SensorTypeSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/materialdesignicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/vendor.bundle.addons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/vendor.bundle.base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/misc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/vendor.bundle.base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/misc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/off-canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vendor.bundle.addons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vendor.bundle.base.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/materialdesignicons.min.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_ps.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/vendor.bundle.addons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/vendor.bundle.base.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/errors/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/forms/_sensor_settings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/forms/sensor_add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/forms/zone_add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/_datablock.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/_logo.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/_status.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/buy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/buy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/items.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +184,7 @@
       <updated>1585673712748</updated>
       <workItem from="1585673714247" duration="13494000" />
       <workItem from="1586121957312" duration="3550000" />
-      <workItem from="1586175669604" duration="45306000" />
+      <workItem from="1586175669604" duration="52197000" />
     </task>
     <servers />
   </component>
