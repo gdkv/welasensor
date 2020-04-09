@@ -45,7 +45,8 @@ class SensorController extends Controller
         return view('app.index', [
             'sensors' => Sensor::user()->get(),
             'dataSensor' => Sensor::findOrFail($id),
-            'measure' => Sensor::lastData(),
+            'measure' => Sensor::findOrFail($id)->lastData(),
+            'empty' => false,
         ]);
     }
 

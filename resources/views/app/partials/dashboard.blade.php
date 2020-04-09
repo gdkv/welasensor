@@ -12,7 +12,7 @@
                 <div class="name">
                     Temperature
                 </div>
-                <div class="value">{{ $measure->temperature }}</div>
+                <div class="value">{{ $measure->temperature ?? 'N/A' }}</div>
             </div>
 
         </div>
@@ -25,7 +25,7 @@
                 <div class="name">
                     Humidity
                 </div>
-                <div class="value">25</div>
+                <div class="value">{{ $measure->humidity ?? 'N/A' }}</div>
             </div>
 
         </div>
@@ -38,7 +38,7 @@
                 <div class="name">
                     Lux
                 </div>
-                <div class="value">1</div>
+                <div class="value">{{ $measure->lux ?? 'N/A' }}</div>
             </div>
 
         </div>
@@ -49,9 +49,9 @@
 
             <div class="data-info">
                 <div class="name">
-                    Decibel
+                    Noise
                 </div>
-                <div class="value">-80</div>
+                <div class="value">{{ $measure->decibel ?? 'N/A' }}</div>
             </div>
         </div>
         <div class="data">
@@ -63,7 +63,7 @@
                 <div class="name">
                     CO<sub>2</sub>
                 </div>
-                <div class="value">0</div>
+                <div class="value">{{ $measure->co ?? 'N/A' }}</div>
             </div>
         </div>
 

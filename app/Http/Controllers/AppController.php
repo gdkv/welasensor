@@ -15,11 +15,17 @@ class AppController extends Controller
 
     public function index()
     {
-        return view('app.index', [
-            'sensors' => Sensor::all(),
-            'dataSensor' => Sensor::all()->first(),
-            'measure' => Sensor::all()->first()->lastData(),
-        ]);
+        if (count(Sensor::user()->get())){
+            return view('app.index', [
+                'sensors' => Sensor::user()->get(),
+                'dataSensor' => Sensor::user()->get()->first(),
+                'measure' => Sensor::user()->get()->first()->lastData(),
+                'empty' => false,
+            ]);
+        } else {
+            return view('app.index', ['empty' => true, ]);
+        }
+
     }
 
     public function postData(Request $request)

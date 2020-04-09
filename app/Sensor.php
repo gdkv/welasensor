@@ -27,7 +27,10 @@ class Sensor extends Model
 
     public function lastData()
     {
-        return $this->sensorData()->latest()->first();
+        if(!is_null($this->sensorData())){
+            return $this->sensorData()->latest()->first();
+        }
+        return null;
     }
 
     /**
