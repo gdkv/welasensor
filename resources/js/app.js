@@ -1,8 +1,18 @@
 import PerfectScrollbar from 'perfect-scrollbar';
+import IMask from 'imask';
+import Cookies from 'js-cookie';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';
 
 const container = document.querySelector('.app-aside');
 if (container){
     const ps = new PerfectScrollbar(container);
+}
+
+const dataScroll = document.querySelector('.last-data');
+if (dataScroll){
+    const ps = new PerfectScrollbar(dataScroll);
 }
 
 document.addEventListener('click', function (event) {
@@ -25,8 +35,49 @@ document.addEventListener('click', function (event) {
     content.classList.toggle('active');
 });
 
-document.addEventListener('click', function (event) {
-    if (!event.target.classList.contains('cookie-close')) return;
+let macInput = document.querySelector('input[name="mac"]');
+if (typeof(macInput) != 'undefined' && macInput != null){
+    let macMask = IMask(
+        document.querySelector('input[name="mac"]'), {
+            mask: '**-**-**-**-**-**',
+            definition: {
+                // <any single char>: <same type as mask (RegExp, Function, etc.)>
+                // defaults are '0', 'a', '*'
+                '#': /[0-9A-F]/
+            }
+        }
+    );
+}
 
-    console.log('cookie close');
+let badge = document.querySelector('.input-badge_password');
+if (typeof(badge) != 'undefined' && badge != null) {
+    badge.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (this.classList.contains('password-hide')) {
+            document.getElementById("password").setAttribute("type", "text");
+            this.classList.remove('password-hide');
+            this.classList.add('password-show');
+        } else {
+            document.getElementById("password").setAttribute("type", "password");
+            this.classList.remove('password-show');
+            this.classList.add('password-hide');
+        }
+    }, false);
+}
+
+
+const cookie = document.querySelector('.cookie');
+if (typeof(cookie) != 'undefined' && cookie != null) {
+    document.querySelector('.cookie-close').addEventListener('click', function () {
+        cookie.classList.add('hide');
+        Cookies.set('hideCookieMessage', '1', {expires: 120, path: '/'});
+    });
+}
+
+// Tippy
+tippy('[data-tippy-content]', {
+    arrow: true,
+    // delay: [1000, 200],
+    theme: 'light',
+    placement: 'bottom',
 });

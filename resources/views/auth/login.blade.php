@@ -22,9 +22,7 @@
 
                 <div class="form-row">
                     <input id="password" type="password" placeholder="Password"  class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                    <span class="input-badge">
-                        <img src="/assets/images/password_hide.svg" alt="">
-                    </span>
+                    <span class="input-badge input-badge_password password-hide"></span>
                 </div>
 
 

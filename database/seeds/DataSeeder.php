@@ -17,24 +17,24 @@ class DataSeeder extends Seeder
 
         DB::table('data')->insert([
             'sensor_mac' => "a0-20-a6-11-b9-f3",
-            'humidity' => 34.4,
-            'pressure' => 748.9,
+            'humidity' => 22.5,
+            'pressure' => 746.2,
             'co' => 0,
-            'temperature' => 28.3,
-            'lux' => 1,
-            'decibel' => -81,
+            'temperature' => 27.1,
+            'lux' => 6,
+            'decibel' => -80,
             'created_at' => $date->format('Y-m-d H:i:s'),
 
         ]);
 
         DB::table('data')->insert([
             'sensor_mac' => "a0-20-a6-08-92-50",
-            'humidity' => 34.3,
-            'pressure' => 748.8,
+            'humidity' => 27.5,
+            'pressure' => 746.1,
             'co' => 0,
-            'temperature' => 27.3,
-            'lux' => 0,
-            'decibel' => -82,
+            'temperature' => 24.4,
+            'lux' => 24,
+            'decibel' => -81,
             'created_at' => $date->format('Y-m-d H:i:s'),
         ]);
 

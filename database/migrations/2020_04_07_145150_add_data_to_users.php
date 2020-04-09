@@ -35,7 +35,9 @@ class AddDataToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('data');
+            $table->dropColumn('plan_id');
+            $table->dropColumn('telegram');
+            $table->dropColumn('subscription_at');
         });
     }
 }

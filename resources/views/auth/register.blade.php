@@ -15,9 +15,7 @@
 
                 <div class="form-row">
                     <input placeholder="Your password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                    <span class="input-badge">
-                        <img src="/assets/images/password_hide.svg" alt="">
-                    </span>
+                    <span class="input-badge input-badge_password password-hide"></span>
                 </div>
 
                 <button type="submit">Sign up</button>

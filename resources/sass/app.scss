@@ -2,6 +2,7 @@
 @import 'fonts';
 @import 'ps';
 @import 'sensors';
+@import 'dashboard';
 
 body {
     font-family: Gilroy;
@@ -82,7 +83,7 @@ main {
 
         aside {
             position: fixed;
-            width: 350px;
+            width: 320px;
             height: 95vh;
             left: 2.5vh;
             top: 2.5vh;
@@ -144,7 +145,7 @@ main {
             }
             .logout {
                 margin-top: 70px;
-                button {
+                a {
                     background: #FC5C7D;
                     border: medium none;
                     font-family: Gilroy;
@@ -221,6 +222,9 @@ main {
         line-height: 38px;
         padding: 0 18px;
         box-sizing: border-box;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0.2s;
 
         &-icon {
             img {
@@ -235,9 +239,16 @@ main {
             }
         }
         &-close {
+            cursor: pointer;
             img {
                 margin: 8px 0 0;
             }
+        }
+
+        &.hide {
+            transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+            visibility: hidden;
+            opacity: 0;
         }
     }
 
@@ -323,6 +334,10 @@ main {
                 margin-bottom: 27px;
                 padding: 0 22px 0;
                 box-sizing: border-box;
+
+                &.is-invalid {
+                    background: rgba(252, 92, 125, .3);
+                }
             }
             .form-row{
                 position: relative;
@@ -330,15 +345,28 @@ main {
                 .input-badge {
                     position: absolute;
                     right: 26px;
-                    padding: 12px 0 0;
+                    padding: 0 0;
                     margin: 3px;
                     width: 27px;
                     height: 27px;
                     box-sizing: border-box;
+                    line-height: 27px;
+                    cursor: pointer;
+
+                    &.password-hide {
+                        background-image: url('/assets/images/password_hide.svg');
+                        background-repeat: no-repeat;
+                        background-position: center 10px;
+                    }
+
+                    &.password-show {
+                        background-image: url('/assets/images/password_show.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
 
                     &_bg {
                         right: 0;
-                        padding: 5px;
                         background-color: #BBBBBB;
                         border-radius: 20px;
                     }

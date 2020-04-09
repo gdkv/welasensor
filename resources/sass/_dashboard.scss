@@ -1,0 +1,73 @@
+.dashboard {
+
+        .info-line {
+            font-weight: 300;
+            font-size: 12.5px;
+            line-height: 14px;
+            color: #888888;
+            margin-top: 20px;
+        }
+
+        .last-data {
+            display: flex;
+            justify-content: space-between;
+            margin: 55px 0;
+            position: relative;
+
+            .data {
+                min-width: 224px;
+                height: 200px;
+                background: #343434;
+                border-radius: 20px;
+                margin-right: 100px;
+                box-sizing: border-box;
+                position: relative;
+
+                &-graph {
+                    position: absolute;
+                    z-index: 10;
+                    height: 130px;
+                    width: 100%;
+                    background: url('/assets/images/Rectangle 17.png');
+                }
+
+                &-info {
+                    z-index: 12;
+                    padding: 17px;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+
+                    .name {
+                        font-weight: 300;
+                        font-size: 16.5px;
+                        line-height: 19px;
+                        color: #FFFFFF;
+                    }
+                    .value {
+                        font-weight: 600;
+                        font-size: 27.5px;
+                        line-height: 33px;
+                        color: #FFFFFF;
+                    }
+                }
+
+                .is-limit {
+                    text-align: right;
+                    width: 100%;
+                    font-style: italic;
+                    font-weight: 300;
+                    font-size: 16.5px;
+                    line-height: 19px;
+                    color: #FFFFFF;
+                    box-sizing: border-box;
+                    padding: 17px;
+                    z-index: 12;
+                    position: relative;
+                    height: 130px;
+                }
+            }
+        }
+}

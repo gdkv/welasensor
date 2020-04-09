@@ -56,11 +56,13 @@ Route::get('/downloads', function () {
 Route::prefix('app')->group(function () {
 
     Route::prefix('sensor')->group(function () {
+        Route::post('/add', 'SensorController@add')->name('sensor_add');
+        Route::get('/data/{id}', 'SensorController@data')->name('sensor_data');
+        Route::get('/{id}', 'SensorController@view')->name('sensor_view');
         Route::get('/', 'SensorController@index')->name('sensors_list');
-        Route::get('/add', 'SensorController@add')->name('sensor_add');
-        Route::get('/view', 'SensorController@view')->name('sensor_view');
     });
 
     Route::get('/', 'AppController@index')->name('app');
 
+    Route::post('/post', 'AppController@postData');
 });

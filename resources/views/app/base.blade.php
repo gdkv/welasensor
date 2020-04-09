@@ -14,7 +14,9 @@
     <aside class="app-aside">
         <div class="top">
             <div class="logo">
-                <img src="/assets/images/LOGO-app.svg" alt="">
+                <a href="{{ route('app') }}">
+                    <img src="/assets/images/LOGO-app.svg" alt="">
+                </a>
             </div>
             <div class="plan">Ultimate plan</div>
         </div>
@@ -33,7 +35,7 @@
             </div>
 
             <div class="logout">
-                <button>Logout</button>
+                <a href="{{ route('logout') }}" class="btn btn-red">Logout</a>
             </div>
 
         </nav>

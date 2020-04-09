@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSensorTable extends Migration
+class AddUserColumnInSensor extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,14 @@ class CreateSensorTable extends Migration
      */
     public function up()
     {
-        Schema::create('sensor', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->nullable();
-            $table->macAddress('mac')->unique();
-            $table->unsignedBigInteger('zone_id');
-            $table->timestamps();
-        });
-
         Schema::table('sensor', function (Blueprint $table) {
-            $table->foreign('zone_id')
+            $table->unsignedBigInteger('user_id')->nullable();
+
+            $table
+                ->foreign('user_id')
                 ->references('id')
-                ->on('zone');
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
@@ -35,6 +31,8 @@ class CreateSensorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sensor');
+        Schema::table('sensor', function (Blueprint $table) {
+            $table->dropColumn('user_id');
+        });
     }
 }

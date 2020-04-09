@@ -2,9 +2,10 @@
 @section('content')
 <nav class="sensors">
     @foreach($sensors as $sensor)
-        <div class="{{ $sensor->isOnline() ? 'online' : 'offline' }} {{ $loop->first ? 'active' : '' }}">
+        <a href="{{ route('sensor_data', $sensor->id) }}" class="{{ $sensor->isOnline() ? 'online' : 'offline' }} {{ $dataSensor->id === $sensor->id ? 'active' : '' }}">
             {{ $sensor->name }}
-        </div>
+        </a>
     @endforeach
 </nav>
+@include('app.partials.dashboard')
 @endsection
