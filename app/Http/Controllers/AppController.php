@@ -18,6 +18,7 @@ class AppController extends Controller
         return view('app.index', [
             'sensors' => Sensor::all(),
             'dataSensor' => Sensor::all()->first(),
+            'measure' => Sensor::all()->first()->lastData(),
         ]);
     }
 

@@ -1,5 +1,13 @@
 .dashboard {
-
+        h1 {
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 31.5px;
+            line-height: 38px;
+            color: #FFFFFF;
+            margin-bottom: 50px;
+        }
         .info-line {
             font-weight: 300;
             font-size: 12.5px;
@@ -45,6 +53,13 @@
                         font-size: 16.5px;
                         line-height: 19px;
                         color: #FFFFFF;
+                        position: relative;
+
+                        sub {
+                            position: absolute;
+                            bottom: -4px;
+                            font-size: 12px;
+                        }
                     }
                     .value {
                         font-weight: 600;
@@ -70,4 +85,25 @@
                 }
             }
         }
+
+    .setting-line {
+        display: flex;
+        justify-content: flex-start;
+
+        .setting-section {
+            width: 684px;
+            background: #343434;
+            border-radius: 20px;
+            padding: 30px;
+            box-sizing: border-box;
+
+            h3 {
+                font-weight: 600;
+                font-size: 26px;
+                line-height: 31px;
+                color: #6A82FB;
+                margin-bottom: 30px;
+            }
+        }
+    }
 }

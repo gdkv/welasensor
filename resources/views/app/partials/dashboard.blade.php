@@ -12,7 +12,7 @@
                 <div class="name">
                     Temperature
                 </div>
-                <div class="value">27.5</div>
+                <div class="value">{{ $measure->temperature }}</div>
             </div>
 
         </div>
@@ -61,11 +61,11 @@
 
             <div class="data-info">
                 <div class="name">
-                    CO2
+                    CO<sub>2</sub>
                 </div>
                 <div class="value">0</div>
             </div>
         </div>
-        
+
     </div>
 </section>

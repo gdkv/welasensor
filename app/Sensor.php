@@ -25,13 +25,18 @@ class Sensor extends Model
         return $this->hasMany('App\Data', 'sensor_mac', 'mac');
     }
 
+    public function lastData()
+    {
+        return $this->sensorData()->latest()->first();
+    }
+
     /**
      * @return DateTime|null
      * @throws \Exception
      */
     private function lastDataDate()
     {
-        $lastData = $this->sensorData()->latest()->first();
+        $lastData = $this->lastData();
         if (isset($lastData)){
             return $lastData->created_at;
         }
