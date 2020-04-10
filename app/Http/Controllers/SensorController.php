@@ -39,14 +39,23 @@ class SensorController extends Controller
 
     public function data(Request $request, $id)
     {
-        /**
-         * Все данные от датчика
-         */
+        // Current sensor data
+        $currentSensor = Sensor::findOrFail($id);
         return view('app.index', [
             'sensors' => Sensor::user(),
-            'dataSensor' => Sensor::findOrFail($id),
-            'measure' => Sensor::findOrFail($id)->lastData(),
-            'temperatureData' => Sensor::findOrFail($id)->data()->pluck('temperature')->take(20),
+            'dataSensor' => $currentSensor,
+            'measure' => $currentSensor->lastData(),
+            'miniChartsData' => [
+                // 20 last measure data for all measurements
+                'temperature' => $currentSensor->sensorData()->pluck('temperature')->take(20)->toArray(),
+                'humidity' => $currentSensor->sensorData()->pluck('humidity')->take(20)->toArray(),
+                'pressure' => $currentSensor->sensorData()->pluck('pressure')->take(20)->toArray(),
+                'lux' => $currentSensor->sensorData()->pluck('lux')->take(20)->toArray(),
+                'decibel' => $currentSensor->sensorData()->pluck('decibel')->take(20)->toArray(),
+                'co2' => $currentSensor->sensorData()->pluck('co')->take(20)->toArray(),
+            ],
+            // get 100 records (by default temperature)
+            'allData' => $currentSensor->sensorData()->pluck('temperature')->take(100)->toArray(),
             'empty' => false,
         ]);
     }
