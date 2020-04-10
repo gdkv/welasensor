@@ -117,5 +117,14 @@
         width: 900px;
         height: 380px;
         background: #343434;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+
+        canvas {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+        }
     }
 }

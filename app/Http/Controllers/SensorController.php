@@ -56,6 +56,7 @@ class SensorController extends Controller
             ],
             // get 100 records (by default temperature)
             'type' => $type ?: 'temperature',
+            'typeColor' => $this->getColorByType($type),
             'empty' => false,
         ]);
     }
@@ -71,7 +72,28 @@ class SensorController extends Controller
     public function measures(Request $request, $id, $type)
     {
         return response()
-            ->json(Sensor::findOrFail($id)->sensorData()->pluck('temperature')->take(100)->toArray());
+            ->json(Sensor::findOrFail($id)->sensorData()->pluck($type)->take(100)->toArray());
     }
 
+    private function getColorByType($type): string
+    {
+        switch ($type){
+            case "humidity":
+                $color = "rgba(255, 188, 66, 1)";
+                break;
+            case "lux":
+                $color = "rgba(48, 169, 222, 1)";
+                break;
+            case "decibel":
+                $color = "rgba(108, 73, 184, 1)";
+                break;
+            case "pressure":
+                $color = "rgba(103, 213, 181, 1)";
+                break;
+            default:
+                $color = "rgba(252, 92, 125, 1)";
+                break;
+        }
+        return $color;
+    }
 }

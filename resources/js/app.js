@@ -89,6 +89,7 @@ let chart = document.getElementById('myChart');
 if (typeof(chart) != 'undefined' && chart != null) {
 
     let url = chart.dataset.measuresFile;
+    let lineColor =  chart.dataset.measureColor;
     // let chartDataSet = [];
 
     fetch(url)
@@ -103,7 +104,7 @@ if (typeof(chart) != 'undefined' && chart != null) {
                         label: false,
                         data: out,
                         fill: false,
-                        borderColor: 'rgba(252, 92, 125, 1)',
+                        borderColor: lineColor,
                         lineTension: 0.2,
                         borderJoinStyle: 'round'
                     }]

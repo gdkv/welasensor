@@ -46009,7 +46009,8 @@ Object(tippy_js__WEBPACK_IMPORTED_MODULE_3__["default"])('[data-tippy-content]',
 var chart = document.getElementById('myChart');
 
 if (typeof chart != 'undefined' && chart != null) {
-  var url = chart.dataset.measuresFile; // let chartDataSet = [];
+  var url = chart.dataset.measuresFile;
+  var lineColor = chart.dataset.measureColor; // let chartDataSet = [];
 
   fetch(url).then(function (res) {
     return res.json();
@@ -46023,7 +46024,7 @@ if (typeof chart != 'undefined' && chart != null) {
           label: false,
           data: out,
           fill: false,
-          borderColor: 'rgba(252, 92, 125, 1)',
+          borderColor: lineColor,
           lineTension: 0.2,
           borderJoinStyle: 'round'
         }]

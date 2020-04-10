@@ -604,6 +604,15 @@ main.app .form-content form p {
   width: 900px;
   height: 380px;
   background: #343434;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.dashboard .full-chart canvas {
+  position: absolute;
+  top: -15px;
+  left: -15px;
 }
 
 body {

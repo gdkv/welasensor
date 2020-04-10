@@ -18,6 +18,7 @@
             id="myChart"
             width="900"
             height="380"
-            data-measures-file="{{ route('sensor_'.$type.'_measures', $dataSensor->id) }}"></canvas>
+            data-measures-file="{{ route('sensor_'.$type.'_measures', $dataSensor->id) }}"
+            data-measure-color="{{ $typeColor }}"></canvas>
     </section>
 </section>

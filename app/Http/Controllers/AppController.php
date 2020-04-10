@@ -32,6 +32,7 @@ class AppController extends Controller
                     'co2' => $firstSensor->sensorData()->pluck('co')->take(20)->toArray(),
                 ],
                 'type' => 'temperature',
+                'typeColor' => 'rgba(252, 92, 125, 1)',
                 'empty' => false,
             ]);
         } else {
