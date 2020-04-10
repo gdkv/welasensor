@@ -14,6 +14,10 @@
     {{--</div>--}}
 
     <section class="full-chart">
-        <canvas id="myChart" width="900" height="380"></canvas>
+        <canvas
+            id="myChart"
+            width="900"
+            height="380"
+            data-measures-file="{{ route('sensor_temperature_measures', $dataSensor->id) }}"></canvas>
     </section>
 </section>

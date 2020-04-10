@@ -55,7 +55,7 @@ class SensorController extends Controller
                 'co2' => $currentSensor->sensorData()->pluck('co')->take(20)->toArray(),
             ],
             // get 100 records (by default temperature)
-            'allData' => $currentSensor->sensorData()->pluck('temperature')->take(100)->toArray(),
+            // 'dataUrl' => $currentSensor->sensorData()->pluck('temperature')->take(100)->toArray(),
             'empty' => false,
         ]);
     }
@@ -66,6 +66,12 @@ class SensorController extends Controller
          * Настройки сенсора
          */
         return view('app.sensors.view', ['sensor' => Sensor::findOrFail($id),]);
+    }
+
+    public function measures(Request $request, $id, $type)
+    {
+        return response()
+            ->json(Sensor::findOrFail($id)->sensorData()->pluck('temperature')->take(100)->toArray());
     }
 
 }
