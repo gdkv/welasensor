@@ -16,10 +16,23 @@ class AppController extends Controller
     public function index()
     {
         if (count(Sensor::user()->get())){
+            // Show all data from 1 sensor
+            $firstSensor = Sensor::user()->first();
             return view('app.index', [
-                'sensors' => Sensor::user()->get(),
-                'dataSensor' => Sensor::user()->get()->first(),
-                'measure' => Sensor::user()->get()->first()->lastData(),
+                'sensors' => Sensor::user()->get(), // all User sensors
+                'dataSensor' => $firstSensor, // get First sensor Data
+                'measure' => $firstSensor->lastData(), // get First sensor 1 LAST measure Data
+                'miniChartsData' => [
+                    // 20 last measure data for all measurements
+                    'temperature' => $firstSensor->sensorData()->pluck('temperature')->take(20)->toArray(),
+                    'humidity' => $firstSensor->sensorData()->pluck('humidity')->take(20)->toArray(),
+                    'pressure' => $firstSensor->sensorData()->pluck('pressure')->take(20)->toArray(),
+                    'lux' => $firstSensor->sensorData()->pluck('lux')->take(20)->toArray(),
+                    'decibel' => $firstSensor->sensorData()->pluck('decibel')->take(20)->toArray(),
+                    'co2' => $firstSensor->sensorData()->pluck('co')->take(20)->toArray(),
+                ],
+                // get 100 records (by default temperature)
+                'allData' => $firstSensor->sensorData()->pluck('temperature')->take(100)->toArray(),
                 'empty' => false,
             ]);
         } else {

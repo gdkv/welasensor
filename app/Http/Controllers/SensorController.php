@@ -43,9 +43,10 @@ class SensorController extends Controller
          * Все данные от датчика
          */
         return view('app.index', [
-            'sensors' => Sensor::user()->get(),
+            'sensors' => Sensor::user(),
             'dataSensor' => Sensor::findOrFail($id),
             'measure' => Sensor::findOrFail($id)->lastData(),
+            'temperatureData' => Sensor::findOrFail($id)->data()->pluck('temperature')->take(20),
             'empty' => false,
         ]);
     }
