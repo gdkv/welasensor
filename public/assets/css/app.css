@@ -517,14 +517,19 @@ main.app .form-content form p {
   margin-right: 100px;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
+}
+
+.dashboard .last-data .data.active {
+  background: #434343;
 }
 
 .dashboard .last-data .data-graph {
   position: absolute;
-  z-index: 10;
-  height: 130px;
+  z-index: 1;
   width: 100%;
-  background: url("/assets/images/Rectangle 17.png");
+  top: -25px;
+  left: -15px;
 }
 
 .dashboard .last-data .data-info {
@@ -592,6 +597,12 @@ main.app .form-content form p {
   line-height: 31px;
   color: #6A82FB;
   margin-bottom: 30px;
+}
+
+.dashboard .full-chart {
+  width: 900px;
+  height: 380px;
+  background: #343434;
 }
 
 body {

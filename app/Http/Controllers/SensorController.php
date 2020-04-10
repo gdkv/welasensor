@@ -40,7 +40,7 @@ class SensorController extends Controller
     public function data(Request $request, $id)
     {
         /**
-         * Вся дата информация от датчика
+         * Все данные от датчика
          */
         return view('app.index', [
             'sensors' => Sensor::user()->get(),

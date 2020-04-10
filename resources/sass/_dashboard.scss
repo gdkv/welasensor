@@ -30,13 +30,19 @@
                 margin-right: 100px;
                 box-sizing: border-box;
                 position: relative;
+                overflow: hidden;
+
+                &.active {
+                    background: #434343;
+                }
 
                 &-graph {
                     position: absolute;
-                    z-index: 10;
-                    height: 130px;
+                    z-index: 1;
                     width: 100%;
-                    background: url('/assets/images/Rectangle 17.png');
+                    //background: url('/assets/images/Rectangle 17.png');
+                    top: -25px;
+                    left: -15px;
                 }
 
                 &-info {
@@ -105,5 +111,11 @@
                 margin-bottom: 30px;
             }
         }
+    }
+
+    .full-chart {
+        width: 900px;
+        height: 380px;
+        background: #343434;
     }
 }
