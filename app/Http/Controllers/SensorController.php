@@ -37,7 +37,7 @@ class SensorController extends Controller
         return redirect(route('sensors_list'));
     }
 
-    public function data(Request $request, $id)
+    public function data(Request $request, $id, $type)
     {
         // Current sensor data
         $currentSensor = Sensor::findOrFail($id);
@@ -55,7 +55,7 @@ class SensorController extends Controller
                 'co2' => $currentSensor->sensorData()->pluck('co')->take(20)->toArray(),
             ],
             // get 100 records (by default temperature)
-            // 'dataUrl' => $currentSensor->sensorData()->pluck('temperature')->take(100)->toArray(),
+            'type' => $type ?: 'temperature',
             'empty' => false,
         ]);
     }

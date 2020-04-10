@@ -31,8 +31,7 @@ class AppController extends Controller
                     'decibel' => $firstSensor->sensorData()->pluck('decibel')->take(20)->toArray(),
                     'co2' => $firstSensor->sensorData()->pluck('co')->take(20)->toArray(),
                 ],
-                // get 100 records (by default temperature)
-                'allData' => $firstSensor->sensorData()->pluck('temperature')->take(100)->toArray(),
+                'type' => 'temperature',
                 'empty' => false,
             ]);
         } else {

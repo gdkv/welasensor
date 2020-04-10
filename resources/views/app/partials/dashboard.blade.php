@@ -5,7 +5,7 @@
 
     @include('app.partials.last_data')
 
-    <h1>Temperature from {{$dataSensor->name}}</h1>
+    <h1>{{ucfirst($type)}} from {{$dataSensor->name}}</h1>
 
     {{--<div class="chart-control">--}}
         {{--<a href="?period=week">Last week</a>--}}
@@ -18,6 +18,6 @@
             id="myChart"
             width="900"
             height="380"
-            data-measures-file="{{ route('sensor_temperature_measures', $dataSensor->id) }}"></canvas>
+            data-measures-file="{{ route('sensor_'.$type.'_measures', $dataSensor->id) }}"></canvas>
     </section>
 </section>

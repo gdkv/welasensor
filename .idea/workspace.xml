@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/partials/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/partials/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/partials/last_data.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/partials/last_data.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +188,7 @@
       <updated>1585673712748</updated>
       <workItem from="1585673714247" duration="13494000" />
       <workItem from="1586121957312" duration="3550000" />
-      <workItem from="1586175669604" duration="111933000" />
+      <workItem from="1586175669604" duration="113530000" />
     </task>
     <servers />
   </component>
@@ -215,9 +219,9 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="529" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1586376905031" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1586532257913">
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1586560471200">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1586532257913" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1586560471200" />
   </component>
 </project>
