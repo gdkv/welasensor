@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
     </list>
@@ -185,7 +184,7 @@
       <updated>1585673712748</updated>
       <workItem from="1585673714247" duration="13494000" />
       <workItem from="1586121957312" duration="3550000" />
-      <workItem from="1586175669604" duration="111781000" />
+      <workItem from="1586175669604" duration="111933000" />
     </task>
     <servers />
   </component>

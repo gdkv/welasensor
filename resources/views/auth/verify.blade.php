@@ -6,14 +6,10 @@
         'showSensor' => true
     ])
 
-    <div class="form-wrapper">
-        <div class="form form-aside">
-            <div class="form-content">
-                <form method="POST" action="{{ route('verification.resend') }}">
-                    @csrf
-                    <button class="btn btn-left" type="submit">Click here to request another</button>
-                </form>
-            </div>
-        </div>
+    <div>
+        <form method="POST" action="{{ route('verification.resend') }}">
+            @csrf
+            <button class="btn btn-left" type="submit">Click here to request another</button>
+        </form>
     </div>
 @endsection
