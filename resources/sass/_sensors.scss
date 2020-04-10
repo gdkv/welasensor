@@ -88,6 +88,7 @@
 main {
 
     &.app {
+        min-height: calc(100vh - 60px);
         padding: 30px 30px 30px 400px;
 
         h1 {

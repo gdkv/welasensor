@@ -342,6 +342,7 @@ table {
 }
 
 main.app {
+  min-height: calc(100vh - 60px);
   padding: 30px 30px 30px 400px;
 }
 
@@ -641,7 +642,7 @@ a {
 }
 
 main {
-  min-height: 100vh;
+  min-height: calc(100vh - 110px);
   padding: 30px 430px 80px 30px;
 }
 

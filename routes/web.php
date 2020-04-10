@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Auth
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/login', function () {
     return view('main.index');

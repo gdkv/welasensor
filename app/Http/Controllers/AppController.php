@@ -10,7 +10,7 @@ class AppController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => 'postData']);
+        $this->middleware(['auth','verified'], ['except' => 'postData']);
     }
 
     public function index()
