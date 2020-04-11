@@ -72,7 +72,7 @@ class SensorController extends Controller
     public function measures(Request $request, $id, $type)
     {
         return response()
-            ->json(Sensor::findOrFail($id)->sensorData()->pluck($type)->take(2000)->toArray());
+            ->json(Sensor::findOrFail($id)->sensorData()->pluck($type)->take(100)->toArray());
     }
 
     private function getColorByType($type): string
