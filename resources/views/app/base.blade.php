@@ -23,15 +23,15 @@
 
         <nav>
             <div class="quick-links">
-                <a href="/app/sensor/add">Add sensor</a>
-                <a href="/app/zone/add">Add room</a>
+                <a href="{{ route('sensors_list') }}">Add sensor</a>
+                <a href="#">Add room</a>
             </div>
             <div class="main">
-                <a href="/app/sensor">Sensors</a>
-                <a href=/app/zone">Rooms</a>
-                <a href="/app/settings">Settings</a>
-                <a href="/app/reports">Reports</a>
-                <a href="/app/limits">Limits and notify</a>
+                <a href="{{ route('sensors_list') }}">Sensors</a>
+                <a href="#">Rooms</a>
+                <a href="#">Settings</a>
+                <a href="#">Reports</a>
+                <a href="#">Limits and notify</a>
             </div>
 
             <div class="logout">
