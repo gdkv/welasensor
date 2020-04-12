@@ -27,4 +27,14 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="section">
+            <div class="section-title">
+                WS REST API
+            </div>
+            <div class="section-description">
+                <p>If you want to get access to our API data you can write us a mail <a href="mailto:support@welasensor.ru">support@welasensor.ru</a></p>
+            </div>
+        </div>
+    </section>
 @endsection
