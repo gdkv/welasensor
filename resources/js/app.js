@@ -5,6 +5,7 @@ import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/light.css';
 import Chart from 'chart.js';
+import Slideout from 'slideout';
 
 const container = document.querySelector('.app-aside');
 if (container){
@@ -138,3 +139,24 @@ if (typeof(chart) != 'undefined' && chart != null) {
         });
 
 }
+
+let slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('mobile-menu'),
+    'padding': 300,
+    'tolerance': 70,
+    // 'touch': false,
+    'easing': 'ease-in-out'
+});
+
+document.querySelector('.toggle-button').addEventListener('click', function() {
+    slideout.toggle();
+});
+
+slideout.on('open', function () {
+    document.getElementById('panel').addEventListener('click', function() {
+        if (slideout.isOpen()) {
+            slideout.close();
+        }
+    });
+});

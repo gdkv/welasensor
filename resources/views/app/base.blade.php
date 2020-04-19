@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ mix('/assets/css/app.css') }}" type="text/css" />
 </head>
 <body>
-<main class="app">
+<main id="panel" class="app">
     <aside class="app-aside">
         <div class="top">
             <div class="logo">
@@ -20,32 +20,31 @@
             </div>
             <div class="plan">Ultimate plan</div>
         </div>
-
-        <nav>
-            <div class="quick-links">
-                <a href="{{ route('sensors_list') }}">Add sensor</a>
-                <a href="#">Add room</a>
-            </div>
-            <div class="main">
-                <a href="{{ route('sensors_list') }}">Sensors</a>
-                <a href="#">Rooms</a>
-                <a href="#">Settings</a>
-                <a href="#">Reports</a>
-                <a href="#">Limits and notify</a>
-            </div>
-
-            <div class="logout">
-                <a href="{{ route('logout') }}" class="btn btn-red">Logout</a>
-            </div>
-
-        </nav>
-
+        @include('app.partials.aside')
     </aside>
     <section class="content">
+        <div class="mobile-header">
+            <div class="logo">
+                <a href="{{ route('app') }}">
+                    <img src="/assets/images/LOGO-app.svg" alt="">
+                </a>
+            </div>
+            <div class="mobile-nav toggle-button">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
         @yield('content')
     </section>
 
 </main>
+<div id="mobile-menu" class="app-mobile-menu">
+    <aside class="app-aside">
+    @include('app.partials.aside')
+    </aside>
+
+</div>
 <script src="{{ mix('/assets/js/app.js') }}"></script>
 </body>
 

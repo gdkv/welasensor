@@ -5,3 +5,10 @@
     <a href="/how-to/">How to</a>
     <a href="/downloads/">Downloads</a>
 </nav>
+@if(!$mobile)
+<div class="mobile-nav toggle-button">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+@endif

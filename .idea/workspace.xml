@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/sass/_slideout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app/partials/aside.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/downloads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/downloads.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_sensors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_sensors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +198,11 @@
       <workItem from="1585673714247" duration="13494000" />
       <workItem from="1586121957312" duration="3550000" />
       <workItem from="1586175669604" duration="115761000" />
-      <workItem from="1586702452169" duration="144000" />
+      <workItem from="1586702452169" duration="1172000" />
+      <workItem from="1587029271714" duration="600000" />
+      <workItem from="1587032812712" duration="1035000" />
+      <workItem from="1587033934353" duration="87000" />
+      <workItem from="1587304578979" duration="8045000" />
     </task>
     <servers />
   </component>
@@ -196,6 +213,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="454" y="271" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587314835584">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="454" y="271" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877@0.23.1440.877" timestamp="1587314835584" />
     <state x="533" y="184" key="#com.intellij.ide.util.MemberChooser" timestamp="1586443387113">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

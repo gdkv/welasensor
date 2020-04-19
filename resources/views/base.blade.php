@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="{{ mix('/assets/css/app.css') }}" type="text/css" />
 </head>
 <body>
-    <main class="welcome">
+    <main id="panel" class="welcome">
         <header>
             <div class="logo">
                 <a href="/"><img src="/assets/images/logo.svg" alt=""></a>
             </div>
-             @include('partials.nav', [])
+             @include('partials.nav', ['mobile' => false,])
         </header>
         @yield('content')
         <aside>
@@ -32,6 +32,19 @@
             @include('partials.cookie')
         @endif
     </main>
+
+    <div id="mobile-menu">
+        @if(Auth::check())
+            @include('auth.user')
+        @elseif(Route::currentRouteName()=='register')
+            @include('auth.register')
+        @else
+            @include('auth.login')
+        @endif
+        @include('partials.nav', ['mobile' => true,])
+
+    </div>
+
     <script src="{{ mix('/assets/js/app.js') }}"></script>
 </body>
 

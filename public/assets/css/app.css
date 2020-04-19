@@ -258,14 +258,15 @@ table {
 
 .sensors {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .sensors a {
-  width: 200px;
+  width: 186px;
   height: 32px;
   line-height: 32px;
-  margin-right: 20px;
+  margin: 0 0 15px 0;
   background: #111111;
   border-radius: 10px;
   font-weight: 300;
@@ -297,6 +298,18 @@ table {
 
 .sensors a.active {
   background: #676767;
+}
+
+@media (max-width: 414px) {
+  .sensors a {
+    width: 166px;
+  }
+}
+
+@media (max-width: 320px) {
+  .sensors a {
+    width: 146px;
+  }
 }
 
 .welasensor {
@@ -579,6 +592,12 @@ main.app .form-content form p {
   height: 130px;
 }
 
+@media (max-width: 414px) {
+  .dashboard .last-data .data {
+    margin-right: 20px;
+  }
+}
+
 .dashboard .setting-line {
   display: flex;
   justify-content: flex-start;
@@ -601,7 +620,7 @@ main.app .form-content form p {
 }
 
 .dashboard .full-chart {
-  width: 900px;
+  width: 100%;
   height: 380px;
   background: #343434;
   position: relative;
@@ -613,6 +632,45 @@ main.app .form-content form p {
   position: absolute;
   top: -15px;
   left: -15px;
+}
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF;
+  /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
 }
 
 body {
@@ -651,6 +709,97 @@ a {
   background: #FC5C7D;
 }
 
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav div {
+  background-color: #fff;
+  width: 33px;
+  height: 3.5px;
+  margin: 4px 0 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 414px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+.app-aside {
+  position: fixed;
+  width: 320px;
+  height: 95vh;
+  left: 2.5vh;
+  top: 2.5vh;
+  background: #000000;
+  border-radius: 30px;
+  padding: 46px 38px;
+  box-sizing: border-box;
+}
+
+.app-aside a {
+  text-decoration: none;
+}
+
+.app-aside .top {
+  margin: 0 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.app-aside .top .plan {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.app-aside .quick-links a,
+.app-aside .quick-links button,
+.app-aside .logout a,
+.app-aside .logout button {
+  width: 100%;
+  height: 35px;
+  background: #6B81FA;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 15.5px;
+  line-height: 35px;
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.app-aside .main a {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15.5px;
+  line-height: 18px;
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.app-aside .logout {
+  margin-top: 70px;
+}
+
+.app-aside .logout a {
+  background: #FC5C7D;
+  border: medium none;
+  font-family: Gilroy;
+}
+
+@media (max-width: 414px) {
+  .app-aside {
+    display: none;
+  }
+}
+
 main {
   min-height: calc(100vh - 110px);
   padding: 30px 430px 80px 30px;
@@ -678,6 +827,12 @@ main .top .left a:hover {
   color: #FFFFFF;
 }
 
+@media (max-width: 320px) {
+  main .top .right .welasensor {
+    display: none;
+  }
+}
+
 main.welcome {
   background: linear-gradient(90deg, #FC5C7D 0%, #6A82FB 100%);
 }
@@ -694,75 +849,38 @@ main.welcome aside {
   background: rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 414px) {
+  main.welcome aside {
+    display: none;
+  }
+}
+
+@media (max-width: 414px) {
+  main.welcome {
+    padding: 7.5px 7.5px 66px;
+  }
+}
+
 main.app {
   background: #2A2A2A;
 }
 
-main.app aside {
-  position: fixed;
-  width: 320px;
-  height: 95vh;
-  left: 2.5vh;
-  top: 2.5vh;
-  background: #000000;
-  border-radius: 30px;
-  padding: 46px 38px;
-  box-sizing: border-box;
+@media (max-width: 414px) {
+  main.app {
+    padding: 7.5px 7.5px 66px;
+  }
 }
 
-main.app aside a {
-  text-decoration: none;
-}
-
-main.app aside .top {
-  margin: 0 0 70px;
-  display: flex;
+main.app .mobile-header {
+  display: none;
+  margin-bottom: 25px;
   justify-content: space-between;
-  align-items: baseline;
 }
 
-main.app aside .top .plan {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 22px;
-  color: #FFFFFF;
-}
-
-main.app aside .quick-links a,
-main.app aside .quick-links button,
-main.app aside .logout a,
-main.app aside .logout button {
-  width: 100%;
-  height: 35px;
-  background: #6B81FA;
-  border-radius: 5px;
-  font-weight: 300;
-  font-size: 15.5px;
-  line-height: 35px;
-  color: #FFFFFF;
-  display: block;
-  text-align: center;
-  margin: 0 0 30px;
-}
-
-main.app aside .main a {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15.5px;
-  line-height: 18px;
-  color: #FFFFFF;
-  display: block;
-  margin-bottom: 40px;
-}
-
-main.app aside .logout {
-  margin-top: 70px;
-}
-
-main.app aside .logout a {
-  background: #FC5C7D;
-  border: medium none;
-  font-family: Gilroy;
+@media (max-width: 414px) {
+  main.app .mobile-header {
+    display: flex;
+  }
 }
 
 main header {
@@ -792,6 +910,12 @@ main header nav a:not(:first-child) {
 
 main header nav a:hover {
   color: #FFFFFF;
+}
+
+@media (max-width: 414px) {
+  main header nav {
+    display: none;
+  }
 }
 
 main h1 {
@@ -846,6 +970,12 @@ main .cookie-text a {
   text-decoration: none;
 }
 
+@media (max-width: 414px) {
+  main .cookie-text {
+    margin: 10px;
+  }
+}
+
 main .cookie-close {
   cursor: pointer;
 }
@@ -858,6 +988,17 @@ main .cookie.hide {
   transition: visibility 0s linear 0.33s, opacity 0.33s linear;
   visibility: hidden;
   opacity: 0;
+}
+
+@media (max-width: 414px) {
+  main .cookie {
+    width: 80%;
+    line-height: 1;
+    font-size: 13.5px;
+    left: 7%;
+    height: auto;
+    bottom: 8px;
+  }
 }
 
 main .items {
@@ -874,8 +1015,21 @@ main .items .item {
   box-sizing: border-box;
 }
 
+@media (max-width: 414px) {
+  main .items .item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
 main .items .item-2x {
   width: 560px;
+}
+
+@media (max-width: 414px) {
+  main .items .item-2x {
+    width: 100%;
+  }
 }
 
 main .items .item-title {
@@ -911,6 +1065,12 @@ main .items .item-price {
 main .items .item-price span {
   font-weight: 300;
   font-size: 16px;
+}
+
+@media (max-width: 414px) {
+  main .items {
+    flex-wrap: wrap;
+  }
 }
 
 .form {
@@ -1079,5 +1239,71 @@ main .items .item-price span {
 .account p {
   color: black;
   margin-top: 10px;
+}
+
+#mobile-menu {
+  box-shadow: -5px 0 30px #aeaeae inset;
+  padding: 7.5px;
+  box-sizing: border-box;
+}
+
+#mobile-menu.app-mobile-menu {
+  box-shadow: none;
+  background-color: #2A2A2A;
+}
+
+#mobile-menu.app-mobile-menu .app-aside {
+  display: block;
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+#mobile-menu nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#mobile-menu nav a {
+  margin: 12px 0;
+  width: 50%;
+}
+
+#mobile-menu .form-wrapper,
+#mobile-menu .account {
+  background-color: #A173CA;
+  padding: 15px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  margin: 0 0 20px;
+}
+
+#mobile-menu .form-wrapper .form-header,
+#mobile-menu .account .form-header {
+  color: #FFFFFF;
+}
+
+#mobile-menu .form-wrapper a,
+#mobile-menu .form-wrapper p,
+#mobile-menu .account a,
+#mobile-menu .account p {
+  color: #FFFFFF;
+}
+
+#mobile-menu .form-wrapper p,
+#mobile-menu .account p {
+  margin-bottom: 10px;
+}
+
+#mobile-menu .form-wrapper .form-content form input,
+#mobile-menu .account .form-content form input {
+  width: 100%;
+}
+
+#mobile-menu .form-wrapper .form-content form button,
+#mobile-menu .account .form-content form button {
+  background: #FFFFFF;
+  color: #000;
 }
 

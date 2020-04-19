@@ -16,6 +16,7 @@
         <div class="form-content">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
+                <input type="hidden" value="1" name="remember" />
                 <div class="form-row">
                     <input id="email" type="email" placeholder="Email"  class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 </div>

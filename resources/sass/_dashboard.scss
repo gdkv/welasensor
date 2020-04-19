@@ -89,6 +89,10 @@
                     position: relative;
                     height: 130px;
                 }
+
+                @media (max-width: 414px) {
+                    margin-right: 20px;
+                }
             }
         }
 
@@ -114,7 +118,7 @@
     }
 
     .full-chart {
-        width: 900px;
+        width: 100%;
         height: 380px;
         background: #343434;
         position: relative;
@@ -126,5 +130,6 @@
             top: -15px;
             left: -15px;
         }
+
     }
 }
