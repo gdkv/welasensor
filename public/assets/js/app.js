@@ -46577,6 +46577,12 @@ if (dataScroll) {
   var _ps = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"](dataScroll);
 }
 
+var mainChart = document.querySelector('.full-chart');
+
+if (mainChart) {
+  var _ps2 = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"](mainChart);
+}
+
 var slideout = new slideout__WEBPACK_IMPORTED_MODULE_7___default.a({
   'panel': document.getElementById('panel'),
   'menu': document.getElementById('mobile-menu'),
@@ -46615,6 +46621,7 @@ if (typeof chart != 'undefined' && chart != null) {
     var ctx = chart.getContext('2d');
     var myChart = new chart_js__WEBPACK_IMPORTED_MODULE_6___default.a(ctx, {
       type: 'line',
+      responsive: true,
       data: {
         labels: out,
         datasets: [{
@@ -46629,7 +46636,9 @@ if (typeof chart != 'undefined' && chart != null) {
       options: {
         elements: {
           point: {
-            radius: 0
+            radius: 2.5,
+            backgroundColor: lineColor,
+            hoverRadius: 4
           }
         },
         legend: {

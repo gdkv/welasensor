@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/js/manifest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/vendor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/cookie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/mask.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/misc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/scrolls.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/slide.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/tips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_dashboard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app/partials/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/partials/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/partials/last_data.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/partials/last_data.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +193,7 @@
       <workItem from="1587029271714" duration="600000" />
       <workItem from="1587032812712" duration="1035000" />
       <workItem from="1587033934353" duration="87000" />
-      <workItem from="1587304578979" duration="11403000" />
+      <workItem from="1587304578979" duration="12824000" />
     </task>
     <servers />
   </component>

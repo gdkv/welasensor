@@ -624,14 +624,11 @@ main.app .form-content form p {
   height: 380px;
   background: #343434;
   position: relative;
-  overflow: hidden;
   border-radius: 20px;
 }
 
 .dashboard .full-chart canvas {
   position: absolute;
-  width: 100%;
-  height: 380px;
 }
 
 .slideout-menu {

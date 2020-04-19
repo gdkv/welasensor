@@ -79,6 +79,11 @@ if (dataScroll){
     const ps = new PerfectScrollbar(dataScroll);
 }
 
+const mainChart = document.querySelector('.full-chart');
+if (mainChart){
+    const ps = new PerfectScrollbar(mainChart);
+}
+
 let slideout = new Slideout({
     'panel': document.getElementById('panel'),
     'menu': document.getElementById('mobile-menu'),
@@ -124,6 +129,7 @@ if (typeof(chart) != 'undefined' && chart != null) {
             let ctx = chart.getContext('2d');
             let myChart = new Chart(ctx, {
                 type: 'line',
+                responsive: true,
                 data: {
                     labels: out,
                     datasets: [{
@@ -137,7 +143,11 @@ if (typeof(chart) != 'undefined' && chart != null) {
                 },
                 options: {
                     elements: {
-                        point: {radius: 0}
+                        point: {
+                            radius: 2.5,
+                            backgroundColor: lineColor,
+                            hoverRadius: 4
+                        }
                     },
                     legend: {
                         labels: {
