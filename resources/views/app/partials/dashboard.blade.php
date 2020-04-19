@@ -13,11 +13,9 @@
         {{--<a href="?period=half-year">Six month</a>--}}
     {{--</div>--}}
 
-    <section class="full-chart">
+    <section class="full-chart" data-slideout-ignore>
         <canvas
             id="myChart"
-            width="360px"
-            height="380px"
             data-measures-file="{{ route('sensor_'.$type.'_measures', $dataSensor->id) }}"
             data-measure-color="{{ $typeColor }}"></canvas>
     </section>
