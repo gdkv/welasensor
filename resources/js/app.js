@@ -129,7 +129,7 @@ if (typeof(chart) != 'undefined' && chart != null) {
             let ctx = chart.getContext('2d');
             let myChart = new Chart(ctx, {
                 type: 'line',
-                responsive: true,
+                responsive: false,
                 data: {
                     labels: out,
                     datasets: [{
