@@ -630,8 +630,8 @@ main.app .form-content form p {
 
 .dashboard .full-chart canvas {
   position: absolute;
-  top: -15px;
-  left: -15px;
+  width: 100%;
+  height: 380px;
 }
 
 .slideout-menu {

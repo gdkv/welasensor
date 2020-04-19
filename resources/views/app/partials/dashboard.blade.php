@@ -16,8 +16,6 @@
     <section class="full-chart">
         <canvas
             id="myChart"
-            width="900"
-            height="380"
             data-measures-file="{{ route('sensor_'.$type.'_measures', $dataSensor->id) }}"
             data-measure-color="{{ $typeColor }}"></canvas>
     </section>

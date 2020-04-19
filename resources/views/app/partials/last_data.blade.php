@@ -1,4 +1,4 @@
-<div class="last-data">
+<div class="last-data" data-slideout-ignore>
     <a href="{{ route('sensor_temperature', $dataSensor->id) }}" class="data {{ $type=='temperature' ? 'active' : ''}}">
 
         @include('app.partials.charts.mini_chart', ['chartColor' => 'rgba(252, 92, 125, 1)', 'chartDataset' => $miniChartsData['temperature'],])

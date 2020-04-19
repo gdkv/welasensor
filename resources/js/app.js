@@ -7,15 +7,29 @@ import 'tippy.js/themes/light.css';
 import Chart from 'chart.js';
 import Slideout from 'slideout';
 
-const container = document.querySelector('.app-aside');
-if (container){
-    const ps = new PerfectScrollbar(container);
+const cookie = document.querySelector('.cookie');
+if (typeof(cookie) != 'undefined' && cookie != null) {
+    document.querySelector('.cookie-close').addEventListener('click', function () {
+        cookie.classList.add('hide');
+        Cookies.set('hideCookieMessage', '1', {expires: 120, path: '/'});
+    });
 }
 
-const dataScroll = document.querySelector('.last-data');
-if (dataScroll){
-    const ps = new PerfectScrollbar(dataScroll);
+let macInput = document.querySelector('input[name="mac"]');
+if (typeof(macInput) != 'undefined' && macInput != null){
+    let macMask = IMask(
+        document.querySelector('input[name="mac"]'), {
+            mask: '**-**-**-**-**-**',
+            definition: {
+                // <any single char>: <same type as mask (RegExp, Function, etc.)>
+                // defaults are '0', 'a', '*'
+                '#': /[0-9A-F]/
+            }
+        }
+    );
 }
+
+// Accordion in questions
 
 document.addEventListener('click', function (event) {
     if (!event.target.classList.contains('question-title')) return;
@@ -37,20 +51,8 @@ document.addEventListener('click', function (event) {
     content.classList.toggle('active');
 });
 
-let macInput = document.querySelector('input[name="mac"]');
-if (typeof(macInput) != 'undefined' && macInput != null){
-    let macMask = IMask(
-        document.querySelector('input[name="mac"]'), {
-            mask: '**-**-**-**-**-**',
-            definition: {
-                // <any single char>: <same type as mask (RegExp, Function, etc.)>
-                // defaults are '0', 'a', '*'
-                '#': /[0-9A-F]/
-            }
-        }
-    );
-}
 
+// Passwords badge
 let badge = document.querySelector('.input-badge_password');
 if (typeof(badge) != 'undefined' && badge != null) {
     badge.addEventListener('click', function (event) {
@@ -67,14 +69,36 @@ if (typeof(badge) != 'undefined' && badge != null) {
     }, false);
 }
 
-
-const cookie = document.querySelector('.cookie');
-if (typeof(cookie) != 'undefined' && cookie != null) {
-    document.querySelector('.cookie-close').addEventListener('click', function () {
-        cookie.classList.add('hide');
-        Cookies.set('hideCookieMessage', '1', {expires: 120, path: '/'});
-    });
+const container = document.querySelector('.app-aside');
+if (container){
+    const ps = new PerfectScrollbar(container);
 }
+
+const dataScroll = document.querySelector('.last-data');
+if (dataScroll){
+    const ps = new PerfectScrollbar(dataScroll);
+}
+
+let slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('mobile-menu'),
+    'padding': 300,
+    'tolerance': 70,
+    // 'touch': false,
+    'easing': 'ease-in-out'
+});
+
+document.querySelector('.toggle-button').addEventListener('click', function() {
+    slideout.toggle();
+});
+
+slideout.on('open', function () {
+    document.getElementById('panel').addEventListener('click', function() {
+        if (slideout.isOpen()) {
+            slideout.close();
+        }
+    });
+});
 
 // Tippy
 tippy('[data-tippy-content]', {
@@ -83,6 +107,7 @@ tippy('[data-tippy-content]', {
     theme: 'light',
     placement: 'bottom',
 });
+
 
 // Chart js
 let chart = document.getElementById('myChart');
@@ -140,23 +165,3 @@ if (typeof(chart) != 'undefined' && chart != null) {
 
 }
 
-let slideout = new Slideout({
-    'panel': document.getElementById('panel'),
-    'menu': document.getElementById('mobile-menu'),
-    'padding': 300,
-    'tolerance': 70,
-    // 'touch': false,
-    'easing': 'ease-in-out'
-});
-
-document.querySelector('.toggle-button').addEventListener('click', function() {
-    slideout.toggle();
-});
-
-slideout.on('open', function () {
-    document.getElementById('panel').addEventListener('click', function() {
-        if (slideout.isOpen()) {
-            slideout.close();
-        }
-    });
-});
