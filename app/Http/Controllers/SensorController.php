@@ -68,7 +68,12 @@ class SensorController extends Controller
         /**
          * Настройки сенсора
          */
+        $sensorLimitsArray = [];
         $currentSensor = Sensor::findOrFail($id);
+        $sensorLimits = $currentSensor->limit()->latest()->first();
+        if ($sensorLimits !== null){
+            $sensorLimitsArray = $sensorLimits->toArray();
+        }
         $validMac = filter_var($request->input('mac'), FILTER_VALIDATE_MAC);
         $sensorName = htmlspecialchars($request->input('name'));
         if ($validMac && $sensorName){
@@ -77,7 +82,8 @@ class SensorController extends Controller
             // $user->sensor()->save($sensor);
             $currentSensor->save();
         }
-        return view('app.sensors.view', ['sensor' => $currentSensor,]);
+
+        return view('app.sensors.view', ['sensor' => $currentSensor, 'limits' => $sensorLimitsArray,]);
     }
 
     public function delete(Request $request, $id)

@@ -65,4 +65,9 @@ class Sensor extends Model
         }
         return 'Data has not received yet';
     }
+
+    public function limit()
+    {
+        return $this->hasOne('App\Limit');
+    }
 }

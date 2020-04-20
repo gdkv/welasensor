@@ -153,6 +153,13 @@ table {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Droid Serif";
+  src: local("Droid Serif Italic"), local("DroidSerif-Italic"), url("http://hb.bizmrg.com/fonts/droidserif/400i.woff2") format("woff2"), url("http://hb.bizmrg.com/fonts/droidserif/400i.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
 .ps {
   overflow: hidden !important;
   overflow-anchor: none;
@@ -453,7 +460,7 @@ main.app .form-content form p {
 .sensors-wrapper .sensors-list .item {
   width: 166px;
   margin-bottom: 40px;
-  margin-right: 35px;
+  margin-right: 65px;
 }
 
 .sensors-wrapper .sensors-list .item .welasensor-info {
@@ -484,6 +491,19 @@ main.app .form-content form p {
   color: #888888;
 }
 
+@media (max-width: 414px) {
+  .sensors-wrapper .sensors-list .item {
+    width: 100%;
+    display: flex;
+    margin-right: 0;
+  }
+
+  .sensors-wrapper .sensors-list .item .welasensor-info {
+    margin-left: 20px;
+    text-align: left;
+  }
+}
+
 .sensors-wrapper .sensors-list .add-sensor_form {
   width: 370px;
   height: 350px;
@@ -492,7 +512,7 @@ main.app .form-content form p {
   padding: 30px;
   box-sizing: border-box;
   margin-bottom: 40px;
-  margin-right: 36px;
+  margin-right: 65px;
 }
 
 @media (max-width: 414px) {
@@ -729,8 +749,9 @@ main.app .form-content form p {
 
 .dashboard .limit-block_content .line_label {
   width: 15%;
+  font-family: "Droid Serif";
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 13.5px;
   line-height: 16px;
   color: #6A82FB;

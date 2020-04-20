@@ -164,7 +164,7 @@ main {
         .item {
             width: 166px;
             margin-bottom: 40px;
-            margin-right: 35px;
+            margin-right: 65px;
 
             .welasensor-info {
                 margin-top: 8px;
@@ -191,6 +191,17 @@ main {
                     color: #888888;
                 }
             }
+
+            @media (max-width: 414px) {
+                width: 100%;
+                display: flex;
+                margin-right: 0;
+
+                .welasensor-info {
+                    margin-left: 20px;
+                    text-align: left;
+                }
+            }
         }
 
         .add-sensor_form {
@@ -201,7 +212,7 @@ main {
             padding: 30px;
             box-sizing: border-box;
             margin-bottom: 40px;
-            margin-right: 36px;
+            margin-right: 65px;
 
             @media (max-width: 414px) {
                 width: 100%;

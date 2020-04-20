@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LimitController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Limit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Limit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Sensor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sensor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_sensors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_sensors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/partials/limit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/partials/limit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/sensors/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/sensors/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +199,8 @@
       <workItem from="1587029271714" duration="600000" />
       <workItem from="1587032812712" duration="1035000" />
       <workItem from="1587033934353" duration="87000" />
-      <workItem from="1587304578979" duration="30775000" />
+      <workItem from="1587304578979" duration="30976000" />
+      <workItem from="1587414867349" duration="5028000" />
     </task>
     <servers />
   </component>
@@ -209,10 +219,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="533" y="184" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877@0.23.1440.877" timestamp="1586443387113" />
-    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586380418665">
+    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587417691299">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877@0.23.1440.877" timestamp="1586380418665" />
+    <state x="458" y="223" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877@0.23.1440.877" timestamp="1587417691299" />
     <state x="399" y="121" key="#phpunit.xml" timestamp="1586542586308">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

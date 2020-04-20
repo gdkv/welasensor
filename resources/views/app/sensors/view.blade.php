@@ -44,16 +44,16 @@
                 <h3>Limits <span class="badge">0/5</span></h3>
 
                 <div class="form-content">
-                    <form action="">
+                    <form method="POST" action="{{ route('limits', $sensor->id) }}">
                         @csrf
                         <div class="limit wrapper">
-                            @include('app.partials.limit', ['title' => 'Temperature', 'max' => 99, 'min' => 1, ])
-                            @include('app.partials.limit', ['title' => 'Humidity', 'max' => 99, 'min' => 1, ])
-                            @include('app.partials.limit', ['title' => 'Pressure', 'max' => 99, 'min' => 1, ])
+                            @include('app.partials.limit', ['title' => 'Temperature', 'name' => 'temperature', 'max' => ($limits['temperature']['max']??''), 'min' => ($limits['temperature']['min']??''), ])
+                            @include('app.partials.limit', ['title' => 'Humidity', 'name' => 'humidity', 'max' => ($limits['humidity']['max']??''), 'min' => ($limits['humidity']['min']??''), ])
+                            @include('app.partials.limit', ['title' => 'Pressure', 'name' => 'pressure', 'max' => ($limits['pressure']['max']??''), 'min' => ($limits['pressure']['min']??''), ])
 
-                            @include('app.partials.limit', ['title' => 'Noise level', 'max' => 99, 'min' => 1, ])
-                            @include('app.partials.limit', ['title' => 'Lux', 'max' => 99, 'min' => 1, ])
-                            @include('app.partials.limit', ['title' => 'CO2', 'max' => 99, 'min' => 1, ])
+                            @include('app.partials.limit', ['title' => 'Noise level', 'name' => 'db', 'max' => ($limits['db']['max']??''), 'min' => ($limits['db']['min']??''), ])
+                            @include('app.partials.limit', ['title' => 'Lux', 'name' => 'lux', 'max' => ($limits['lux']['max']??''), 'min' => ($limits['lux']['min']??''), ])
+                            @include('app.partials.limit', ['title' => 'CO2', 'name' => 'co', 'max' => ($limits['co2']['max']??''), 'min' => ($limits['co2']['min']??''), ])
                         </div>
                         <button type="submit" class="btn btn-blue">
                             Set limits
