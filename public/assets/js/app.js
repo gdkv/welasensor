@@ -46623,10 +46623,10 @@ if (typeof chart != 'undefined' && chart != null) {
       type: 'line',
       responsive: false,
       data: {
-        labels: out,
+        labels: Object.keys(out),
         datasets: [{
           label: false,
-          data: out,
+          data: Object.values(out),
           fill: false,
           borderColor: lineColor,
           lineTension: 0.2,

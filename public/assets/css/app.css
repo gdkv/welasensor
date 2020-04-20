@@ -561,7 +561,7 @@ main.app .form-content form p {
   position: absolute;
   z-index: 1;
   width: 100%;
-  top: -25px;
+  top: -10px;
   left: -15px;
 }
 
