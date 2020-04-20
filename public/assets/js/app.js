@@ -46528,7 +46528,7 @@ if (typeof macInput != 'undefined' && macInput != null) {
 
 
 document.addEventListener('click', function (event) {
-  if (!event.target.classList.contains('question-title')) return;
+  if (!event.target.classList.contains('toogle')) return;
   var content = document.querySelector(event.target.hash);
   if (!content) return;
   event.preventDefault();
@@ -46538,10 +46538,10 @@ document.addEventListener('click', function (event) {
     return;
   }
 
-  var accordions = document.querySelectorAll('.answer.active');
+  var accordions = document.querySelectorAll('.toogle-block.active');
 
-  for (var i = 0; i < accordions.length; i++) {
-    accordions[i].classList.remove('active');
+  for (var _i = 0; _i < accordions.length; _i++) {
+    accordions[_i].classList.remove('active');
   }
 
   content.classList.toggle('active');
@@ -46621,7 +46621,7 @@ if (typeof chart != 'undefined' && chart != null) {
     var ctx = chart.getContext('2d');
     var myChart = new chart_js__WEBPACK_IMPORTED_MODULE_6___default.a(ctx, {
       type: 'line',
-      responsive: true,
+      responsive: false,
       data: {
         labels: out,
         datasets: [{
@@ -46672,6 +46672,84 @@ if (typeof chart != 'undefined' && chart != null) {
     throw err;
   });
 }
+
+var x, i, j, selElmnt, a, b, c;
+x = document.getElementsByClassName("custom-select");
+
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  a = document.createElement("div");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  b = document.createElement("div");
+  b.setAttribute("class", "select-items select-hide");
+
+  for (j = 1; j < selElmnt.length; j++) {
+    c = document.createElement("div");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function (e) {
+      var y, i, k, s, h;
+      s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+      h = this.parentNode.previousSibling;
+
+      for (i = 0; i < s.length; i++) {
+        if (s.options[i].innerHTML == this.innerHTML) {
+          s.selectedIndex = i;
+          h.innerHTML = this.innerHTML;
+          y = this.parentNode.getElementsByClassName("same-as-selected");
+
+          for (k = 0; k < y.length; k++) {
+            y[k].removeAttribute("class");
+          }
+
+          this.setAttribute("class", "same-as-selected");
+          break;
+        }
+      }
+
+      h.click();
+    });
+    b.appendChild(c);
+  }
+
+  x[i].appendChild(b);
+  a.addEventListener("click", function (e) {
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+
+function closeAllSelect(elmnt) {
+  var x,
+      y,
+      i,
+      arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i);
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+
+document.addEventListener("click", closeAllSelect);
+setTimeout(function () {
+  var elem = document.querySelector('.alert');
+  elem.parentNode.removeChild(elem);
+}, 6000);
 
 /***/ }),
 

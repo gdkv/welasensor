@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e24d4a50-5f5b-4a31-8531-5bf3978d246a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/images/backspace.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_form.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_select.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app/partials/limit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SensorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Limit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Limit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_sensors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_sensors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_slideout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_slideout.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/sensors/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/sensors/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/howto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/howto.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +207,7 @@
       <workItem from="1587029271714" duration="600000" />
       <workItem from="1587032812712" duration="1035000" />
       <workItem from="1587033934353" duration="87000" />
-      <workItem from="1587304578979" duration="13328000" />
+      <workItem from="1587304578979" duration="29746000" />
     </task>
     <servers />
   </component>
@@ -223,9 +242,13 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="529" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1586376905031" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1586560471200">
+    <state x="385" y="211" key="run.anything.popup" timestamp="1587386975635">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1586560471200" />
+    <state x="385" y="211" key="run.anything.popup/0.23.1440.877@0.23.1440.877" timestamp="1587386975635" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1587386840416">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1587386840416" />
   </component>
 </project>

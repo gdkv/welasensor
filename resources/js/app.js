@@ -32,7 +32,7 @@ if (typeof(macInput) != 'undefined' && macInput != null){
 // Accordion in questions
 
 document.addEventListener('click', function (event) {
-    if (!event.target.classList.contains('question-title')) return;
+    if (!event.target.classList.contains('toogle')) return;
 
     let content = document.querySelector(event.target.hash);
     if (!content) return;
@@ -44,7 +44,7 @@ document.addEventListener('click', function (event) {
         return;
     }
 
-    let accordions = document.querySelectorAll('.answer.active');
+    let accordions = document.querySelectorAll('.toogle-block.active');
     for (let i = 0; i < accordions.length; i++) {
         accordions[i].classList.remove('active');
     }
@@ -175,3 +175,68 @@ if (typeof(chart) != 'undefined' && chart != null) {
 
 }
 
+var x, i, j, selElmnt, a, b, c;
+x = document.getElementsByClassName("custom-select");
+for (i = 0; i < x.length; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    a = document.createElement("div");
+    a.setAttribute("class", "select-selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    b = document.createElement("div");
+    b.setAttribute("class", "select-items select-hide");
+    for (j = 1; j < selElmnt.length; j++) {
+        c = document.createElement("div");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+            var y, i, k, s, h;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < s.length; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    for (k = 0; k < y.length; k++) {
+                        y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    a.addEventListener("click", function(e) {
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+    });
+}
+
+function closeAllSelect(elmnt) {
+    var x, y, i, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("select-selected");
+    for (i = 0; i < y.length; i++) {
+        if (elmnt == y[i]) {
+            arrNo.push(i)
+        } else {
+            y[i].classList.remove("select-arrow-active");
+        }
+    }
+    for (i = 0; i < x.length; i++) {
+        if (arrNo.indexOf(i)) {
+            x[i].classList.add("select-hide");
+        }
+    }
+}
+document.addEventListener("click", closeAllSelect);
+
+setTimeout(function () {
+    let elem = document.querySelector('.alert');
+    elem.parentNode.removeChild(elem);
+}, 6000);

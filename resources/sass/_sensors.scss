@@ -139,8 +139,12 @@ main {
                 }
                 button {
                     width: 320px;
-                    background: #FC5C7D;
+                    //background: #FC5C7D;
                     border-radius: 5px;
+
+                    @media (max-width: 414px) {
+                        width: 100%;
+                    }
                 }
                 p {
                     margin-top: 5px;
@@ -199,6 +203,12 @@ main {
             margin-bottom: 40px;
             margin-right: 36px;
 
+            @media (max-width: 414px) {
+                width: 100%;
+                padding: 10px;
+                margin-right: 0;
+            }
+
             h1 {
                 font-family: Gilroy;
                 font-weight: 600;
@@ -207,6 +217,12 @@ main {
                 color: #6A82FB;
             }
 
+            input {
+                @media (max-width: 414px) {
+                    width: 100%;
+                }
+            }
         }
     }
 }
+

@@ -35,6 +35,11 @@
                 <div></div>
             </div>
         </div>
+        @if (session('status'))
+            <div class="alert">
+                <p>{{ session('status') }}</p>
+            </div>
+        @endif
         @yield('content')
     </section>
 

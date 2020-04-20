@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Sensor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class SensorController extends Controller
 {
@@ -33,8 +34,9 @@ class SensorController extends Controller
             ]);
 
             $user->sensor()->save($sensor);
+            return redirect(route('sensors_list'))->with('status', 'Sensor added!');
         }
-        return redirect(route('sensors_list'));
+        return redirect(route('sensors_list'))->with('status', 'Mac address is not valid!');
     }
 
     public function data(Request $request, $id, $type)
@@ -47,12 +49,12 @@ class SensorController extends Controller
             'measure' => $currentSensor->lastData(),
             'miniChartsData' => [
                 // 20 last measure data for all measurements
-                'temperature' => $currentSensor->sensorData()->pluck('temperature')->take(20)->toArray(),
-                'humidity' => $currentSensor->sensorData()->pluck('humidity')->take(20)->toArray(),
-                'pressure' => $currentSensor->sensorData()->pluck('pressure')->take(20)->toArray(),
-                'lux' => $currentSensor->sensorData()->pluck('lux')->take(20)->toArray(),
-                'decibel' => $currentSensor->sensorData()->pluck('decibel')->take(20)->toArray(),
-                'co2' => $currentSensor->sensorData()->pluck('co')->take(20)->toArray(),
+                'temperature' => $currentSensor->sensorData()->pluck('temperature')->take(-20)->toArray(),
+                'humidity' => $currentSensor->sensorData()->pluck('humidity')->take(-20)->toArray(),
+                'pressure' => $currentSensor->sensorData()->pluck('pressure')->take(-20)->toArray(),
+                'lux' => $currentSensor->sensorData()->pluck('lux')->take(-20)->toArray(),
+                'decibel' => $currentSensor->sensorData()->pluck('decibel')->take(-20)->toArray(),
+                'co2' => $currentSensor->sensorData()->pluck('co')->take(-20)->toArray(),
             ],
             // get 100 records (by default temperature)
             'type' => $type ?: 'temperature',
@@ -66,13 +68,39 @@ class SensorController extends Controller
         /**
          * Настройки сенсора
          */
-        return view('app.sensors.view', ['sensor' => Sensor::findOrFail($id),]);
+        $currentSensor = Sensor::findOrFail($id);
+        $validMac = filter_var($request->input('mac'), FILTER_VALIDATE_MAC);
+        $sensorName = htmlspecialchars($request->input('name'));
+        if ($validMac && $sensorName){
+            $currentSensor->mac = $validMac;
+            $currentSensor->name = $sensorName;
+            // $user->sensor()->save($sensor);
+            $currentSensor->save();
+        }
+        return view('app.sensors.view', ['sensor' => $currentSensor,]);
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $currentSensor = Sensor::user()->findOrFail($id);
+        if ($currentSensor && $request->input('check') === 'I agree'){
+            // Force deleting all related models...
+            $currentSensor->forceDelete();
+            // return Redirect::route('sensors_list');
+            return redirect(route('sensors_list'))->with('status', 'Sensor deleted!');
+        } else {
+            // print($currentSensor->id);
+            // print($request->input('check'));
+            // print('Nope');
+            return Redirect::route('sensor_view', ['id' => $id]);
+        }
+
     }
 
     public function measures(Request $request, $id, $type)
     {
         return response()
-            ->json(Sensor::findOrFail($id)->sensorData()->pluck($type)->take(100)->toArray());
+            ->json(Sensor::findOrFail($id)->sensorData()->pluck($type)->take(-100)->toArray());
     }
 
     private function getColorByType($type): string

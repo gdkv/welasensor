@@ -430,8 +430,13 @@ main.app .form-content form .form-row .input-badge_bg {
 
 main.app .form-content form button {
   width: 320px;
-  background: #FC5C7D;
   border-radius: 5px;
+}
+
+@media (max-width: 414px) {
+  main.app .form-content form button {
+    width: 100%;
+  }
 }
 
 main.app .form-content form p {
@@ -490,12 +495,26 @@ main.app .form-content form p {
   margin-right: 36px;
 }
 
+@media (max-width: 414px) {
+  .sensors-wrapper .sensors-list .add-sensor_form {
+    width: 100%;
+    padding: 10px;
+    margin-right: 0;
+  }
+}
+
 .sensors-wrapper .sensors-list .add-sensor_form h1 {
   font-family: Gilroy;
   font-weight: 600;
   font-size: 26px;
   line-height: 31px;
   color: #6A82FB;
+}
+
+@media (max-width: 414px) {
+  .sensors-wrapper .sensors-list .add-sensor_form input {
+    width: 100%;
+  }
 }
 
 .dashboard h1 {
@@ -601,6 +620,11 @@ main.app .form-content form p {
 .dashboard .setting-line {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 50px;
+}
+
+.dashboard .setting-line:last-child {
+  margin-bottom: 0;
 }
 
 .dashboard .setting-line .setting-section {
@@ -619,6 +643,35 @@ main.app .form-content form p {
   margin-bottom: 30px;
 }
 
+.dashboard .setting-line .setting-section h3 .badge {
+  background: rgba(196, 196, 196, 0.1);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 18px;
+  color: #6B81FA;
+  padding: 1px 7px;
+}
+
+@media (max-width: 414px) {
+  .dashboard .setting-line .setting-section {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.dashboard .setting-line.danger h3 {
+  color: #FC5C7D;
+}
+
+.dashboard .setting-line.danger button {
+  background: #FC5C7D;
+}
+
+.dashboard .setting-line input {
+  width: 100%;
+}
+
 .dashboard .full-chart {
   width: 100%;
   height: 380px;
@@ -629,6 +682,113 @@ main.app .form-content form p {
 
 .dashboard .full-chart canvas {
   position: absolute;
+}
+
+.dashboard .limit.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dashboard .limit-block {
+  width: 150px;
+  height: 135px;
+  background: #676767;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 30px 30px 0;
+}
+
+@media (min-width: 414px) {
+  .dashboard .limit-block:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .dashboard .limit-block:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.dashboard .limit-block_header {
+  font-weight: 300;
+  font-size: 15.5px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.dashboard .limit-block_content .line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  vertical-align: center;
+  margin-top: 15px;
+}
+
+.dashboard .limit-block_content .line_label {
+  width: 15%;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13.5px;
+  line-height: 16px;
+  color: #6A82FB;
+}
+
+.dashboard .limit-block_content .line_label.max {
+  color: #FC5C7D;
+}
+
+.dashboard .limit-block_content .line_input {
+  width: 45%;
+}
+
+.dashboard .limit-block_content .line_input input {
+  font-weight: 600;
+  font-size: 18.5px;
+  line-height: 28px;
+  color: #FFFFFF;
+  width: 100%;
+  height: 28px;
+  background: rgba(196, 196, 196, 0.1);
+  border-radius: 20px;
+  padding: 0 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.dashboard .limit-block_content .line_clear {
+  width: 15%;
+}
+
+.dashboard .limit-block_content .line_clear .clear-button {
+  background: url("/assets/images/backspace.svg");
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.dashboard .delete-form {
+  display: none;
+}
+
+.dashboard .delete-form.active {
+  display: block;
+}
+
+.alert {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #FC5C7D;
+  padding: 5px 22px;
+  border-radius: 10px;
+}
+
+.alert p {
+  margin: 0;
+  font-size: 13.5px;
 }
 
 .slideout-menu {
@@ -654,10 +814,7 @@ main.app .form-content form p {
 .slideout-panel {
   position: relative;
   z-index: 1;
-  will-change: transform;
-  background-color: #FFF;
-  /* A background-color is required */
-  min-height: 100vh;
+  background-color: #FFFFFF;
 }
 
 .slideout-open,
@@ -668,6 +825,172 @@ main.app .form-content form p {
 
 .slideout-open .slideout-menu {
   display: block;
+}
+
+.form {
+  text-align: center;
+}
+
+.form-header {
+  font-weight: 600;
+  font-size: 22.5px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.form-content {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-content .error {
+  background-color: #333333;
+  padding: 7px;
+  border-radius: 6px;
+  margin: 0 0 10px;
+}
+
+.form-content form input {
+  width: 320px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.39);
+  border-radius: 20px;
+  border: medium none;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 17px;
+  color: #666666;
+  margin-bottom: 27px;
+  padding: 0 22px 0;
+  box-sizing: border-box;
+}
+
+.form-content form input.is-invalid {
+  background: rgba(252, 92, 125, 0.3);
+}
+
+.form-content form .form-row {
+  position: relative;
+}
+
+.form-content form .form-row .input-badge {
+  position: absolute;
+  right: 26px;
+  padding: 0 0;
+  margin: 3px;
+  width: 27px;
+  height: 27px;
+  box-sizing: border-box;
+  line-height: 27px;
+  cursor: pointer;
+}
+
+.form-content form .form-row .input-badge.password-hide {
+  background-image: url("/assets/images/password_hide.svg");
+  background-repeat: no-repeat;
+  background-position: center 10px;
+}
+
+.form-content form .form-row .input-badge.password-show {
+  background-image: url("/assets/images/password_show.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-content form .form-row .input-badge_bg {
+  right: 0;
+  background-color: #BBBBBB;
+  border-radius: 20px;
+}
+
+.form-content form button {
+  height: 35px;
+  background: #A173CA;
+  border-radius: 20px;
+  font-family: Gilroy;
+  display: block;
+  padding: 0 55px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 19px auto;
+}
+
+.form-content form button.btn-blue {
+  background: #6B81FA;
+}
+
+.form-content form a {
+  font-size: 15px;
+  color: #FC5C7D;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Gilroy;
+}
+
+.custom-select select {
+  display: none;
+  /*hide original SELECT element: */
+}
+
+.custom-select .select-selected {
+  background-color: #111111;
+}
+
+.custom-select .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.custom-select .select-selected .select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.custom-select .select-items {
+  position: absolute;
+  background-color: #111111;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 10px;
+}
+
+.custom-select .select-hide {
+  display: none;
+}
+
+.custom-select .select-items div,
+.custom-select .select-selected {
+  color: #ffffff;
+  padding: 9px 22px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.custom-select .select-items div {
+  border-radius: 0;
+}
+
+.custom-select .same-as-selected {
+  background-color: #2A2A2A;
 }
 
 body {
@@ -704,6 +1027,10 @@ a {
 
 .btn-red {
   background: #FC5C7D;
+}
+
+.btn-blue {
+  background: #6A82FB;
 }
 
 .mobile-nav {
@@ -1070,101 +1397,6 @@ main .items .item-price span {
   }
 }
 
-.form {
-  text-align: center;
-}
-
-.form-header {
-  font-weight: 600;
-  font-size: 22.5px;
-  line-height: 27px;
-  color: #000000;
-  margin-bottom: 40px;
-}
-
-.form-content {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.form-content form input {
-  width: 320px;
-  height: 35px;
-  background: rgba(255, 255, 255, 0.39);
-  border-radius: 20px;
-  border: medium none;
-  font-family: Gilroy;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 17px;
-  color: #666666;
-  margin-bottom: 27px;
-  padding: 0 22px 0;
-  box-sizing: border-box;
-}
-
-.form-content form input.is-invalid {
-  background: rgba(252, 92, 125, 0.3);
-}
-
-.form-content form .form-row {
-  position: relative;
-}
-
-.form-content form .form-row .input-badge {
-  position: absolute;
-  right: 26px;
-  padding: 0 0;
-  margin: 3px;
-  width: 27px;
-  height: 27px;
-  box-sizing: border-box;
-  line-height: 27px;
-  cursor: pointer;
-}
-
-.form-content form .form-row .input-badge.password-hide {
-  background-image: url("/assets/images/password_hide.svg");
-  background-repeat: no-repeat;
-  background-position: center 10px;
-}
-
-.form-content form .form-row .input-badge.password-show {
-  background-image: url("/assets/images/password_show.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.form-content form .form-row .input-badge_bg {
-  right: 0;
-  background-color: #BBBBBB;
-  border-radius: 20px;
-}
-
-.form-content form button {
-  height: 35px;
-  background: #A173CA;
-  border-radius: 20px;
-  font-family: Gilroy;
-  display: block;
-  padding: 0 55px;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 22px;
-  color: #FFFFFF;
-  margin: 19px auto;
-}
-
-.form-content form a {
-  font-size: 15px;
-  color: #FC5C7D;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 10px;
-}
-
 .question {
   background-color: #FFFFFF;
   border-radius: 20px;
@@ -1255,6 +1487,7 @@ main .items .item-price span {
   width: 100%;
   left: 0;
   top: 0;
+  height: 98vh;
 }
 
 #mobile-menu nav {

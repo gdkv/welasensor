@@ -1,19 +1,19 @@
-@error('email')
-<div class="error">
-    <p>{{ $message }}</p>
-</div>
-@enderror
-@error('password')
-<div class="error">
-    <p>{{ $message }}</p>
-</div>
-@enderror
 <div class="form-wrapper">
     <div class="form form-aside">
         <div class="form-header">
             Login your account
         </div>
         <div class="form-content">
+            @error('email')
+            <div class="error">
+                <p>{{ $message }}</p>
+            </div>
+            @enderror
+            @error('password')
+            <div class="error">
+                <p>{{ $message }}</p>
+            </div>
+            @enderror
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <input type="hidden" value="1" name="remember" />

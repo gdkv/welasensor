@@ -72,8 +72,10 @@ Route::prefix('app')->group(function () {
         Route::get('/data/{id}/co2', 'SensorController@data')->defaults('type', 'co2')->name('sensor_co2');
 
         Route::get('/data/{id}', 'SensorController@data')->defaults('type', '')->name('sensor_data');
+        // Route::post('/limit/{id}', )
+        Route::post('/delete/{id}', 'SensorController@delete')->name('sensor_delete');
         Route::post('/add', 'SensorController@add')->name('sensor_add');
-        Route::get('/{id}', 'SensorController@view')->name('sensor_view');
+        Route::any('/{id}', 'SensorController@view')->name('sensor_view');
         Route::get('/', 'SensorController@index')->name('sensors_list');
     });
 
