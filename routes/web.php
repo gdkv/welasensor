@@ -51,6 +51,14 @@ Route::get('/downloads', function () {
 });
 
 
+Route::get('/tg', function (){
+    Telegram::sendMessage([
+        'chat_id' => '259621516',
+        'text' => 'Hello world!'
+    ]);
+    return;
+});
+
 // App
 
 Route::prefix('app')->group(function () {
