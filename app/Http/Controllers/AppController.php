@@ -47,7 +47,7 @@ class AppController extends Controller
          * Get data from sensors
          */
         $validMac = filter_var($request->input('mac'), FILTER_VALIDATE_MAC);
-        $co2 = $request->input('co2') != 'N/A' ? : 0;
+        $co2 = $request->input('co2') != 'N/A' ? $request->input('co2') : 0;
 
         if ($validMac)
         {
