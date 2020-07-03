@@ -6,7 +6,7 @@
                 {!! $item->description !!}
             </div>
             <div class="item-price">
-                {!! ($item->price ? "€ ".$item->price."<span>/mo</span>" : 'Free') !!}
+                {!! ($item->price ? "$ ".$item->price."<span>/mo</span>" : 'Free') !!}
             </div>
         </div>
     @endforeach

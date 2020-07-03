@@ -141,21 +141,21 @@ table {
 
 @font-face {
   font-family: Gilroy;
-  src: local("Gilroy Light"), local("Gilroy-Light"), url(https://hb.bizmrg.com/fonts/gilroy/300.woff2) format("woff2"), url(https://hb.bizmrg.com/fonts/gilroy/300.woff) format("woff");
+  src: local("Gilroy Light"), local("Gilroy-Light"), url("https://hb.bizmrg.com/fonts/gilroy/300.woff2") format("woff2"), url("https://hb.bizmrg.com/fonts/gilroy/300.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gilroy;
-  src: local("Gilroy SemiBold"), local("Gilroy-SemiBold"), url(https://hb.bizmrg.com/fonts/gilroy/600.woff2) format("woff2"), url(https://hb.bizmrg.com/fonts/gilroy/600.woff) format("woff");
+  src: local("Gilroy ExtraBold"), local("Gilroy-ExtraBold"), url("https://hb.bizmrg.com/fonts/gilroy/800.woff2") format("woff2"), url("https://hb.bizmrg.com/fonts/gilroy/800.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Droid Serif";
-  src: local("Droid Serif Italic"), local("DroidSerif-Italic"), url("http://hb.bizmrg.com/fonts/droidserif/400i.woff2") format("woff2"), url("http://hb.bizmrg.com/fonts/droidserif/400i.woff") format("woff");
+  src: local("Droid Serif Italic"), local("DroidSerif-Italic"), url("https://hb.bizmrg.com/fonts/droidserif/400i.woff2") format("woff2"), url("https://hb.bizmrg.com/fonts/droidserif/400i.woff") format("woff");
   font-weight: 400;
   font-style: italic;
 }
