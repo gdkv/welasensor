@@ -13,7 +13,7 @@
             font-size: 12.5px;
             line-height: 14px;
             color: #888888;
-            margin-top: 20px;
+            // margin-top: 20px;
         }
 
         .last-data {
@@ -78,7 +78,8 @@
                 .is-limit {
                     text-align: right;
                     width: 100%;
-                    font-style: italic;
+                    // font-style: italic;
+                    font-family: 'Droid Serif';
                     font-weight: 300;
                     font-size: 16.5px;
                     line-height: 19px;
@@ -220,10 +221,10 @@
                         font-weight: 400;
                         font-size: 13.5px;
                         line-height: 16px;
-                        color: #6A82FB;
+                        color: #FFFFFF;
 
                         &.max {
-                            color: #FC5C7D;
+                            // color: #FC5C7D;
                         }
                     }
                     &_input {
