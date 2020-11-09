@@ -89,6 +89,11 @@ Route::prefix('app')->group(function () {
         Route::get('/', 'SensorController@index')->name('sensors_list');
     });
 
+    Route::prefix('zone')->group(function () {
+        Route::post('/add', 'ZoneController@add')->name('zone_add');
+        Route::get('/', 'ZoneController@list')->name('zones_list');
+    });
+
     Route::post('/limits/{id}', 'LimitController@add')->name('limits');
     Route::any('/settings', 'AppController@settings')->name('settings');
     Route::post('/post', 'AppController@postData');

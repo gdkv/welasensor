@@ -41,4 +41,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne('App\Sensor');
     }
+
+    public function zone()
+    {
+        return $this->hasOne('App\Zone');
+    }
 }

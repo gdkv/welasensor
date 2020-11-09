@@ -11,6 +11,24 @@ if (typeof(chart) != 'undefined' && chart != null) {
     fetch(url)
         .then(res => res.json())
         .then((out) => {
+            let draw = Chart.controllers.line.prototype.draw;
+            Chart.controllers.line = Chart.controllers.line.extend({
+                draw: function() {
+                    draw.apply(this, arguments);
+                    let ctx = this.chart.chart.ctx;
+                    let _stroke = ctx.stroke;
+                    ctx.stroke = function() {
+                        ctx.save();
+                        ctx.shadowColor = lineColor;
+                        ctx.shadowBlur = 0;
+                        ctx.shadowOffsetX = 0;
+                        ctx.shadowOffsetY = 4;
+                        _stroke.apply(this, arguments)
+                        ctx.restore();
+                    }
+                }
+            });
+
             let ctx = chart.getContext('2d');
             let myChart = new Chart(ctx, {
                 type: 'line',
@@ -20,9 +38,10 @@ if (typeof(chart) != 'undefined' && chart != null) {
                     datasets: [{
                         label: false,
                         data: Object.values(out),
-                        fill: false,
+                        fill: true,
+                        fillColor: '#FFFFFF',
                         borderColor: lineColor,
-                        lineTension: 0.2,
+                        lineTension: 0.6,
                         borderJoinStyle: 'round'
                     }]
                 },
