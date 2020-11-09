@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -86,6 +87,11 @@ Route::prefix('app')->group(function () {
         Route::post('/add', 'SensorController@add')->name('sensor_add');
         Route::any('/{id}', 'SensorController@view')->name('sensor_view');
         Route::get('/', 'SensorController@index')->name('sensors_list');
+    });
+
+    Route::prefix('zone')->group(function () {
+        Route::post('/add', 'ZoneController@add')->name('zone_add');
+        Route::get('/', 'ZoneController@list')->name('zones_list');
     });
 
     Route::post('/limits/{id}', 'LimitController@add')->name('limits');

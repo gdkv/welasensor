@@ -1,7 +1,7 @@
 <div>
     <div class="quick-links">
         <a href="{{ route('sensors_list') }}">Add sensor</a>
-        <a href="#">Add room</a>
+        <a href="{{ route('zones_list') }}">Add room</a>
     </div>
     <div class="main">
         <a href="{{ route('sensors_list') }}">Sensors</a>
