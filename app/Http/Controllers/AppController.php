@@ -79,12 +79,12 @@ class AppController extends Controller
             if ((float)$request->input('temperature')) {
                 $data->temperature = (float)$request->input('temperature');
                 if (isset($limits->temperature['max'])) {
-                    if ($data->humidity > (float)$limits->humidity['max']) {
+                    if ($data->temperature > (float)$limits->temperature['max']) {
                         $alerts[] = ['limit' => 'max', 'type' => 'temperature', 'set' => (float)$limits->temperature['max'], 'get' => $data->temperature, ];
                     }
                 }
                 if (isset($limits->temperature['min'])) {
-                    if ($data->humidity < (float)$limits->humidity['min']) {
+                    if ($data->temperature < (float)$limits->temperature['min']) {
                         $alerts[] = ['limit' => 'min', 'type' => 'temperature', 'set' => (float)$limits->temperature['min'], 'get' => $data->temperature, ];
                     }
                 }
