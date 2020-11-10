@@ -6,6 +6,7 @@
 @import 'slideout';
 @import 'form';
 @import 'select';
+@import 'room';
 
 body {
     font-family: Gilroy;
@@ -19,6 +20,12 @@ a, input, button {
 a {
     color: #FC5C7D;
     text-decoration: none;
+}
+
+sub {
+    font-size: 70%;
+    position: relative;
+    bottom: -3px;
 }
 
 .btn {

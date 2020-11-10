@@ -551,6 +551,7 @@ main.app .form-content form p {
   font-size: 12.5px;
   line-height: 14px;
   color: #888888;
+  margin-top: 20px;
 }
 
 .dashboard .last-data {
@@ -617,7 +618,7 @@ main.app .form-content form p {
 .dashboard .last-data .data .is-limit {
   text-align: right;
   width: 100%;
-  font-family: "Droid Serif";
+  font-style: italic;
   font-weight: 300;
   font-size: 16.5px;
   line-height: 19px;
@@ -702,21 +703,13 @@ main.app .form-content form p {
   position: absolute;
 }
 
-.dashboard .delete-form {
-  display: none;
-}
-
-.dashboard .delete-form.active {
-  display: block;
-}
-
-.limit.wrapper {
+.dashboard .limit.wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.limit-block {
+.dashboard .limit-block {
   width: 150px;
   height: 135px;
   background: #676767;
@@ -727,25 +720,25 @@ main.app .form-content form p {
 }
 
 @media (min-width: 414px) {
-  .limit-block:nth-child(3n) {
+  .dashboard .limit-block:nth-child(3n) {
     margin-right: 0;
   }
 }
 
 @media (max-width: 414px) {
-  .limit-block:nth-child(2n) {
+  .dashboard .limit-block:nth-child(2n) {
     margin-right: 0;
   }
 }
 
-.limit-block_header {
+.dashboard .limit-block_header {
   font-weight: 300;
   font-size: 15.5px;
   line-height: 18px;
   color: #FFFFFF;
 }
 
-.limit-block_content .line {
+.dashboard .limit-block_content .line {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -753,21 +746,25 @@ main.app .form-content form p {
   margin-top: 15px;
 }
 
-.limit-block_content .line_label {
+.dashboard .limit-block_content .line_label {
   width: 15%;
   font-family: "Droid Serif";
   font-style: italic;
   font-weight: 400;
   font-size: 13.5px;
   line-height: 16px;
-  color: #FFFFFF;
+  color: #6A82FB;
 }
 
-.limit-block_content .line_input {
+.dashboard .limit-block_content .line_label.max {
+  color: #FC5C7D;
+}
+
+.dashboard .limit-block_content .line_input {
   width: 45%;
 }
 
-.limit-block_content .line_input input {
+.dashboard .limit-block_content .line_input input {
   font-weight: 600;
   font-size: 18.5px;
   line-height: 28px;
@@ -781,15 +778,23 @@ main.app .form-content form p {
   text-align: center;
 }
 
-.limit-block_content .line_clear {
+.dashboard .limit-block_content .line_clear {
   width: 15%;
 }
 
-.limit-block_content .line_clear .clear-button {
+.dashboard .limit-block_content .line_clear .clear-button {
   background: url("/assets/images/backspace.svg");
   width: 22px;
   height: 16px;
   cursor: pointer;
+}
+
+.dashboard .delete-form {
+  display: none;
+}
+
+.dashboard .delete-form.active {
+  display: block;
 }
 
 .alert {
@@ -1008,6 +1013,53 @@ main.app .form-content form p {
   background-color: #2A2A2A;
 }
 
+.room-block {
+  width: 150px;
+  height: 135px;
+  background: #676767;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 30px 30px 0;
+  color: #FFFFFF;
+  position: relative;
+}
+
+@media (min-width: 414px) {
+  .room-block:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .room-block:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.room-block_header {
+  font-weight: 300;
+  font-size: 18.5px;
+  line-height: 25px;
+  padding: 0 35px 0 0;
+  word-break: break-all;
+}
+
+.room-block_content {
+  font-size: 14.5px;
+  color: #dfdfdf;
+}
+
+.room-block .clear-button {
+  background: url("/assets/images/backspace_red.svg");
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+}
+
 body {
   font-family: Gilroy;
   font-weight: 100;
@@ -1023,6 +1075,12 @@ button {
 a {
   color: #FC5C7D;
   text-decoration: none;
+}
+
+sub {
+  font-size: 70%;
+  position: relative;
+  bottom: -3px;
 }
 
 .btn {

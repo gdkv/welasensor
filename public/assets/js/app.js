@@ -46507,10 +46507,13 @@ document.addEventListener('click', function (event) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-setTimeout(function () {
-  var elem = document.querySelector('.alert');
-  elem.parentNode.removeChild(elem);
-}, 6000);
+var elem = document.querySelector('.alert');
+
+if (typeof elem != 'undefined' && elem != null) {
+  setTimeout(function () {
+    elem.parentNode.removeChild(elem);
+  }, 6000);
+}
 
 /***/ }),
 

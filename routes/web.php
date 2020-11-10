@@ -51,16 +51,6 @@ Route::get('/downloads', function () {
     return view('main.downloads');
 });
 
-
-Route::get('/tg', function (){
-    Telegram::sendMessage([
-        'chat_id' => '259621516',
-        'parse_mode' => 'MarkdownV2',
-        'text' => "*New Limit Alert from Kitchen Sensor*\nYour kitchen sensor get value 22 but your limit set 20, you can see graph https://welasensor\.ru/app"
-    ]);
-    return;
-});
-
 // App
 
 Route::prefix('app')->group(function () {
@@ -95,6 +85,8 @@ Route::prefix('app')->group(function () {
     });
 
     Route::post('/limits/{id}', 'LimitController@add')->name('limits');
+    Route::any('/notify', 'AppController@notify')->name('notify');
+    Route::any('/reports', 'AppController@reports')->name('reports');
     Route::any('/settings', 'AppController@settings')->name('settings');
     Route::post('/post', 'AppController@postData');
 

@@ -20,6 +20,11 @@ class Sensor extends Model
         return $query->where('user_id', $user->id);
     }
 
+    public function scopeMac($query, $mac)
+    {
+        return $query->where('mac', $mac);
+    }
+
     public function sensorData()
     {
         return $this->hasMany('App\Data', 'sensor_mac', 'mac');

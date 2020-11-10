@@ -1,4 +1,7 @@
-setTimeout(function () {
-    let elem = document.querySelector('.alert');
-    elem.parentNode.removeChild(elem);
-}, 6000);
+let elem = document.querySelector('.alert');
+
+if (typeof(elem) != 'undefined' && elem != null) {
+    setTimeout(function () {
+        elem.parentNode.removeChild(elem);
+    }, 6000);
+}

@@ -9,13 +9,15 @@
             </div>
             @foreach($zones as $zone)
                 <div class="item">
-                    <div class="limit-block">
-                        <div class="limit-block_header">
+                    <div class="room-block">
+                        <div class="room-block_header">
                             {{ $zone->name }}
                         </div>
-                        <div class="limit-block_content">
+                        <div class="room-block_content">
                             {{ $zone->description}}
                         </div>
+
+                        <div class="clear-button"></div>
                     </div>
                 </div>
             @endforeach

@@ -5,10 +5,10 @@
     </div>
     <div class="main">
         <a href="{{ route('sensors_list') }}">Sensors</a>
-        <a href="#">Rooms</a>
-        <a href="#">Settings</a>
-        <a href="#">Reports</a>
-        <a href="#">Limits and notify</a>
+        <a href="{{ route('zones_list') }}">Rooms</a>
+        <a href="{{ route('settings') }}">Settings</a>
+        <a href="{{ route('reports') }}">Reports</a>
+        <a href="{{ route('notify') }}">Notify</a>
     </div>
 
     <div class="logout">

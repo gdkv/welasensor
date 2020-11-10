@@ -19,4 +19,9 @@ class Limit extends Model
         'lux' => 'array',
         'db' => 'array',
     ];
+
+    public function scopeSensor($query, $id)
+    {
+        $query->where('sensor_id', $id);
+    }
 }
