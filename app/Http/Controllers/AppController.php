@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Data;
 use App\Limit;
 use App\Sensor;
+use App\User;
 use Illuminate\Http\Request;
 use Telegram\Bot\Laravel\Facades\Telegram;
-use Illuminate\Support\Facades\Auth;
 class AppController extends Controller
 {
     public function __construct()
@@ -49,15 +49,15 @@ class AppController extends Controller
          * @todo Use it as Job!
          * Get data from sensors
          */
+        $alerts = [];
         $validMac = filter_var($request->input('mac'), FILTER_VALIDATE_MAC);
         $co2 = $request->input('co2') != 'N/A' ? $request->input('co2') : 0;
 
         if ($validMac)
         {
-            $alerts = [];
             $sensor = Sensor::mac($validMac)->get()->first();
             $limits = Limit::sensor($sensor->id)->get()->last();
-            $user = Auth::user();
+            $user = User::find($sensor->user_id);
             $data = new Data();
 
             $data->sensor_mac = $validMac;
@@ -100,9 +100,12 @@ class AppController extends Controller
             if (isset($user->telegram) && count($alerts)) {
                 $text = "*New Limit Alert from Kitchen Sensor*\n\n";
                 foreach ($alerts as $alert) {
-                    $text .= "Your {$sensor->name} sensor get value *{$alert['get']}* but your {$alert['limit']} limit set {$alert['set']}\n";
+                    $get = number_format($alert['get'], 2, "\.", " ");
+                    $set = number_format($alert['set'], 2, "\.", " ");
+
+                    $text .= "Your {$sensor->name} sensor get value *{$get}* but your {$alert['limit']} limit set *{$set}*\n";
                 }
-                $text .= "\nYou can see graph https://welasensor\.ru/app";
+                $text .= "\nYou can see [in app graph](https://welasensor.ru/app)";
                 Telegram::sendMessage([
                     'chat_id' => $user->telegram,
                     'parse_mode' => 'MarkdownV2',
@@ -110,14 +113,15 @@ class AppController extends Controller
                 ]);
             }
         }
+
         return response()->json([
             'alerts' => $alerts,
-            'tg' => $user->telegram,
+            // 'tg' => $user->telegram,
             'sensor' => [
                 'id' => $sensor->id,
                 'name' => $sensor->name,
             ],
-            'text' => $text
+            // 'text' => $text
         ]);
     }
 
