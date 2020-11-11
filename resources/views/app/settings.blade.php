@@ -11,15 +11,22 @@
                     <form action="{{ route('settings') }}" method="POST">
                         @csrf
 
-                        <p>If you got more then one sensor in one room you can group it by zone, ex., Kitchen, and then name sensor like Near TV</p>
-                        <input placeholder="Name" type="text" name="name" value="" placeholder="Name">
-                        <input placeholder="Email" type="email" name="email" value="" placeholder="Email" disabled>
+                        <div class="form-row">
+                            <input class="input small" placeholder="Name" type="text" name="name" value="" placeholder="Name">
 
-                        <div class="custom-select">
-                            <select>
-                                <option value="en">English</option>
-                                <option value="ru">Русский</option>
-                            </select>
+                            <div class="input small">
+                                <input placeholder="Email" type="email" name="email" value="" placeholder="Email" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="custom-select">
+                                <select>
+                                    <option>Select language</option>
+                                    <option value="en" selected>English</option>
+                                    <option value="ru">Русский</option>
+                                </select>
+                            </div>
                         </div>
 
                         <button type="submit" class="btn btn-blue">
@@ -41,11 +48,11 @@
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
 
-                        <input id="password" type="password"  name="password" required autocomplete="new-password">
-                        <input id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
+                        <input class="input" placeholder="New password" id="password" type="password"  name="password" required autocomplete="new-password">
+                        <input class="input" placeholder="Confirm new password" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
 
                         <button type="submit" class="btn btn-blue">
-                            Set password
+                            Set new password
                         </button>
                     </form>
                 </div>
@@ -56,10 +63,49 @@
             <div class="setting-section">
                 <h3>Account type</h3>
 
+                <div class="limit wrapper">
+                    @include('app.partials.plan', ['title' => 'Start', 'description' => 'Free',  'suffix' => '', 'isCurrent' => true ])
+                    @include('app.partials.plan', ['title' => 'Pro', 'description' => '$ 6', 'suffix' => '/mo', 'isCurrent' => false, "id" => "pro-plan-variants", ])
+                    @include('app.partials.plan', ['title' => 'Ultimate', 'description' => '$ 16', 'suffix' => '/mo',  'isCurrent' => false,  "id" => "ultimate-plan-variants", ])
+                </div>
 
+                <div class="toogle-block variants" id="pro-plan-variants">
+                    @include('app.partials.plan_variants', ['title' => '1 month Pro subscription', 'price' => '$ 6', ])
+                    @include('app.partials.plan_variants', ['title' => '3 month Pro subscription', 'price' => '$ 16', ])
+                    @include('app.partials.plan_variants', ['title' => '6 month Pro subscription', 'price' => '$ 32', ])
+                    @include('app.partials.plan_variants', ['title' => '1 year Pro subscription', 'price' => '$ 66', ])
+                </div>
 
+                <div class="toogle-block variants" id="ultimate-plan-variants">
+                    @include('app.partials.plan_variants', ['title' => '1 month Ultimate subscription', 'price' => '$ 16', ])
+                    @include('app.partials.plan_variants', ['title' => '3 month Ultimate subscription', 'price' => '$ 46', ])
+                    @include('app.partials.plan_variants', ['title' => '6 month Ultimate subscription', 'price' => '$ 90', ])
+                    @include('app.partials.plan_variants', ['title' => '1 year Ultimate subscription', 'price' => '$ 180', ])
+                </div>
+            </div>
+        </div>
+
+        <div class="setting-line">
+            <div class="setting-section">
+                <h3>Theme</h3>
+
+                <div class="theme-switcher">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+
+                    Dark mode
+                </div>
+
+                <div class="info-line">
+                    Only members with Pro or Ultimate accounts can choose
+                    Dark mode theme. You can try 2-weeks Pro trial, just send
+                    a letter to us support@welasensor.ru
+                </div>
 
             </div>
         </div>
+
     </section>
 @endsection

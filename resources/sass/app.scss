@@ -50,6 +50,10 @@ sub {
         background: #6A82FB;
     }
 
+    &-transparent {
+        background: rgba(196, 196, 196, .1);
+    }
+
     &-left {
         //background: #FC5C7D;
     }

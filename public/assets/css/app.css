@@ -640,6 +640,7 @@ main.app .form-content form p {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 50px;
+  font-size: 0;
 }
 
 .dashboard .setting-line:last-child {
@@ -687,7 +688,20 @@ main.app .form-content form p {
   background: #FC5C7D;
 }
 
-.dashboard .setting-line input {
+.dashboard .setting-line .input {
+  width: 100%;
+  display: inline-block;
+}
+
+.dashboard .setting-line .input.small {
+  width: 45%;
+}
+
+.dashboard .setting-line .input.small:nth-child(2n) {
+  margin-left: 10%;
+}
+
+.dashboard .setting-line .input input {
   width: 100%;
 }
 
@@ -809,6 +823,69 @@ main.app .form-content form p {
 .alert p {
   margin: 0;
   font-size: 13.5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 27px;
+  margin: 0 12px 0 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch input:checked + .slider {
+  background-color: #FC5C7D;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #FC5C7D;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.switch .slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round::before {
+  border-radius: 50%;
+}
+
+.theme-switcher {
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 30px;
+  color: #dfdfdf;
 }
 
 .slideout-menu {
@@ -956,6 +1033,7 @@ main.app .form-content form p {
 .custom-select {
   position: relative;
   font-family: Gilroy;
+  font-size: 15px;
 }
 
 .custom-select select {
@@ -1060,6 +1138,60 @@ main.app .form-content form p {
   top: 14px;
 }
 
+.plan .room-block {
+  height: 150px;
+  margin: 0 0 30px 0;
+}
+
+.plan .room-block_header {
+  font-size: 15.5px;
+}
+
+.plan .room-block_content {
+  font-size: 26.5px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 65px;
+}
+
+.plan .room-block_content__suffix {
+  font-size: 16.5px;
+}
+
+.plan .room-block .btn {
+  min-width: 100%;
+  border-radius: 20px;
+}
+
+.variants {
+  display: none;
+}
+
+.variants.active {
+  display: block;
+  font-size: 15.5px;
+  color: #ffffff;
+}
+
+.variant {
+  background-color: #676767;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+  margin-bottom: 16px;
+}
+
+.variant .price {
+  font-size: 22px;
+}
+
+.variant .btn {
+  margin-bottom: 0;
+  min-width: 105px;
+  border-radius: 20px;
+}
+
 body {
   font-family: Gilroy;
   font-weight: 100;
@@ -1104,6 +1236,10 @@ sub {
 
 .btn-blue {
   background: #6A82FB;
+}
+
+.btn-transparent {
+  background: rgba(196, 196, 196, 0.1);
 }
 
 .mobile-nav {

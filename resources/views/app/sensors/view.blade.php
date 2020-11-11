@@ -26,8 +26,8 @@
                             </select>
                         </div>
                         <p>If you got more then one sensor in one room you can group it by zone, ex., Kitchen, and then name sensor like Near TV</p>
-                        <input placeholder="Name" type="text" name="name" value="{{ $sensor->name }}">
-                        <input placeholder="Mac address" type="text" name="mac" value="{{ $sensor->mac }}">
+                        <input class="input" placeholder="Name" type="text" name="name" value="{{ $sensor->name }}">
+                        <input class="input" placeholder="Mac address" type="text" name="mac" value="{{ $sensor->mac }}">
                         <button type="submit" class="btn btn-blue">
                             Edit
                         </button>
@@ -77,7 +77,7 @@
                     <div class="form-content">
                         <form action="{{ route('sensor_delete', $sensor->id) }}" method="POST">
                             @csrf
-                            <input type="text" name="check" placeholder="Enter: I agree" required="required">
+                            <input class="input" type="text" name="check" placeholder="Enter: I agree" required="required">
                             <button type="submit">
                                 Delete
                             </button>
