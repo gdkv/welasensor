@@ -20,7 +20,7 @@
         }
 
         form {
-            input {
+            input:not([type="checkbox"]) {
                 width: 320px;
                 height: 35px;
                 background: rgba(255, 255, 255, 0.39);
@@ -44,6 +44,11 @@
             }
             .form-row{
                 position: relative;
+                margin-bottom: 30px;
+
+                &.no-margin {
+                    margin-bottom: 0;
+                }
 
                 .input-badge {
                     position: absolute;
@@ -73,6 +78,10 @@
                         background-color: #BBBBBB;
                         border-radius: 20px;
                     }
+                }
+
+                .theme-switcher {
+                    margin-bottom: 20px;
                 }
             }
 

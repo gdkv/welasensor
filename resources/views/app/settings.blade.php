@@ -16,6 +16,9 @@
 
                             <div class="input small">
                                 <input placeholder="Email" type="email" name="email" value="" placeholder="Email" disabled>
+                                <div class="info-line">
+                                    You can’t change your register email, but you can set another for getting reports
+                                </div>
                             </div>
                         </div>
 

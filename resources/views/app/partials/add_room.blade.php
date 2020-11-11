@@ -2,7 +2,7 @@
 <div class="form-content">
     <form class="" action="{{ route('zone_add') }}" method="POST">
         @csrf
-        <div class="form-row">
+        <div class="form-row no-margin">
             <input placeholder="Room name" type="text" name="name" required/>
         </div>
         <div class="form-row">

@@ -551,7 +551,12 @@ main.app .form-content form p {
   font-size: 12.5px;
   line-height: 14px;
   color: #888888;
-  margin-top: 20px;
+  margin-top: 5px;
+}
+
+.dashboard .info-line a {
+  display: inline;
+  font-size: 12.5px;
 }
 
 .dashboard .last-data {
@@ -691,6 +696,7 @@ main.app .form-content form p {
 .dashboard .setting-line .input {
   width: 100%;
   display: inline-block;
+  vertical-align: top;
 }
 
 .dashboard .setting-line .input.small {
@@ -948,7 +954,7 @@ main.app .form-content form p {
   margin: 0 0 10px;
 }
 
-.form-content form input {
+.form-content form input:not([type=checkbox]) {
   width: 320px;
   height: 35px;
   background: rgba(255, 255, 255, 0.39);
@@ -965,12 +971,17 @@ main.app .form-content form p {
   box-sizing: border-box;
 }
 
-.form-content form input.is-invalid {
+.form-content form input:not([type=checkbox]).is-invalid {
   background: rgba(252, 92, 125, 0.3);
 }
 
 .form-content form .form-row {
   position: relative;
+  margin-bottom: 30px;
+}
+
+.form-content form .form-row.no-margin {
+  margin-bottom: 0;
 }
 
 .form-content form .form-row .input-badge {
@@ -1001,6 +1012,10 @@ main.app .form-content form p {
   right: 0;
   background-color: #BBBBBB;
   border-radius: 20px;
+}
+
+.form-content form .form-row .theme-switcher {
+  margin-bottom: 20px;
 }
 
 .form-content form button {
