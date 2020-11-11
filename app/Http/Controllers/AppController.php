@@ -114,15 +114,15 @@ class AppController extends Controller
             }
         }
 
-        return response()->json([
-            'alerts' => $alerts,
-            // 'tg' => $user->telegram,
-            'sensor' => [
-                'id' => $sensor->id,
-                'name' => $sensor->name,
-            ],
-            // 'text' => $text
-        ]);
+        // return response()->json([
+        //     'alerts' => $alerts,
+        //     // 'tg' => $user->telegram,
+        //     'sensor' => [
+        //         'id' => $sensor->id,
+        //         'name' => $sensor->name,
+        //     ],
+        //     // 'text' => $text
+        // ]);
     }
 
     public function settings(Request $request)
