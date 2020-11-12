@@ -1162,6 +1162,12 @@ main.app .form-content form p {
   font-size: 15.5px;
 }
 
+@media (max-width: 414px) {
+  .plan .room-block_header {
+    font-size: 12.5px;
+  }
+}
+
 .plan .room-block_content {
   font-size: 26.5px;
   text-align: center;
