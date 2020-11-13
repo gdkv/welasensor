@@ -12,10 +12,10 @@
                         @csrf
 
                         <div class="form-row">
-                            <input class="input small" placeholder="Name" type="text" name="name" value="" placeholder="Name">
+                        <input class="input small" placeholder="Name" type="text" name="name" value="{{ $user->name }}" placeholder="Name">
 
                             <div class="input small">
-                                <input placeholder="Email" type="email" name="email" value="" placeholder="Email" disabled>
+                                <input placeholder="Email" type="email" name="email" value="{{ $user->email }}" placeholder="Email" disabled>
                                 <div class="info-line">
                                     You can’t change your register email, but you can set another for getting reports
                                 </div>
@@ -24,10 +24,10 @@
 
                         <div class="form-row">
                             <div class="custom-select">
-                                <select>
+                                <select name="lang">
                                     <option>Select language</option>
-                                    <option value="en" selected>English</option>
-                                    <option value="ru">Русский</option>
+                                    <option value="en" @if($user->lang == 'en') selected @endif>English</option>
+                                    <option value="ru" @if($user->lang == 'ru') selected @endif>Русский</option>
                                 </select>
                             </div>
                         </div>
@@ -67,9 +67,13 @@
                 <h3>Account type</h3>
 
                 <div class="limit wrapper">
-                    @include('app.partials.plan', ['title' => 'Start', 'description' => 'Free',  'suffix' => '', 'isCurrent' => true ])
-                    @include('app.partials.plan', ['title' => 'Pro', 'description' => '$ 6', 'suffix' => '/mo', 'isCurrent' => false, "id" => "pro-plan-variants", ])
-                    @include('app.partials.plan', ['title' => 'Ultimate', 'description' => '$ 16', 'suffix' => '/mo',  'isCurrent' => false,  "id" => "ultimate-plan-variants", ])
+                    @include('app.partials.plan', ['title' => 'Start', 'description' => 'Free',  'suffix' => '', 'isCurrent' => $user->plan_id == 1, "id" => "free-plan-variants" ])
+                    @include('app.partials.plan', ['title' => 'Pro', 'description' => '$ 6', 'suffix' => '/mo', 'isCurrent' => $user->plan_id == 2, "id" => "pro-plan-variants", ])
+                    @include('app.partials.plan', ['title' => 'Ultimate', 'description' => '$ 16', 'suffix' => '/mo',  'isCurrent' => $user->plan_id == 3,  "id" => "ultimate-plan-variants", ])
+                </div>
+
+                <div class="toogle-block variants" id="free-plan-variants">
+                    @include('app.partials.plan_variants', ['title' => 'Select free subscription ', ])
                 </div>
 
                 <div class="toogle-block variants" id="pro-plan-variants">
@@ -92,21 +96,30 @@
             <div class="setting-section">
                 <h3>Theme</h3>
 
-                <div class="theme-switcher">
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
+                <div class="form-content">
+                    <form action="{{ route('settings') }}" method="POST">
+                        @csrf
+                        <div class="theme-switcher">
+                            <label class="switch">
+                                <input type="hidden" name="theme" value="0">
+                                <input type="checkbox" name="theme" value="1" @if($user->darkTheme) checked @endif>
+                                <span class="slider round"></span>
+                            </label>
 
-                    Dark mode
+                            Dark mode
+                        </div>
+
+                        <div class="info-line">
+                            Only members with Pro or Ultimate accounts can choose
+                            Dark mode theme. You can try 2-weeks Pro trial, just send
+                            a letter to us support@welasensor.ru
+                        </div>
+
+                        <button type="submit" class="btn btn-blue">
+                            Save
+                        </button>
+                    </form>
                 </div>
-
-                <div class="info-line">
-                    Only members with Pro or Ultimate accounts can choose
-                    Dark mode theme. You can try 2-weeks Pro trial, just send
-                    a letter to us support@welasensor.ru
-                </div>
-
             </div>
         </div>
 

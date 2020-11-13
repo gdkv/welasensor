@@ -7,6 +7,7 @@ use App\Limit;
 use App\Sensor;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Telegram\Bot\Laravel\Facades\Telegram;
 class AppController extends Controller
 {
@@ -127,11 +128,28 @@ class AppController extends Controller
 
     public function settings(Request $request)
     {
-        if ($request->input('co2') ) {
-            // Save Post data
+        $user = Auth::user();
+
+        if ($request->input('theme') !== null) {
+            $user->darkTheme = (int)$request->input('theme');
         }
 
-        return view('app.settings', ['empty' => true, ]);
+        if ($request->input('name') ||
+            $request->input('lang') ||
+            $request->input('plan')
+        ) {
+            // Save Post data
+            $user->name = ($request->input('name') ? : $user->name);
+            $user->lang = ($request->input('lang') ? : $user->lang);
+            $user->plan_id = ($request->input('plan') ? (int)$request->input('plan') : $user->plan_id);
+        }
+
+        $user->save();
+
+        return view('app.settings', [
+            'user' => $user,
+            // 'answer' => json_encode($request->all()),
+        ]);
     }
 
     public function reports(Request $request)

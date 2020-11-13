@@ -6,6 +6,7 @@
         <div class="form-content">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
+                @honeypot
                 <div class="form-row">
                     <input placeholder="Your name and surname" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                 </div>

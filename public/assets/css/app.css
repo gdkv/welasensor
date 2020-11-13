@@ -263,6 +263,237 @@ table {
   width: 11px;
 }
 
+body.dark {
+  background-color: #2A2A2A;
+}
+
+body.dark main.app {
+  background: #2A2A2A;
+}
+
+body.dark main.app h1,
+body.dark main.app p {
+  color: #FFFFFF;
+}
+
+body.dark main.app .form-content form input:not([type=checkbox]) {
+  background: rgba(255, 255, 255, 0.39);
+}
+
+body.dark main.app .form-content form input:not([type=checkbox])::-webkit-input-placeholder {
+  color: #aaaaaa;
+}
+
+body.dark main.app .form-content form input:not([type=checkbox])::-moz-placeholder {
+  color: #aaaaaa;
+}
+
+body.dark main.app .form-content form input:not([type=checkbox]):-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+body.dark main.app .form-content form input:not([type=checkbox])::-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+body.dark main.app .form-content form input:not([type=checkbox])::placeholder {
+  color: #aaaaaa;
+}
+
+body.dark .app-aside {
+  background: #000000;
+}
+
+body.dark .app-aside a {
+  color: #FFFFFF;
+}
+
+body.dark .dashboard .setting-section {
+  background: #343434;
+}
+
+body.dark .dashboard .last-data .data {
+  background: #343434;
+}
+
+body.dark .dashboard .last-data .data.active {
+  background: #434343;
+}
+
+body.dark .dashboard .last-data .data-info .name,
+body.dark .dashboard .last-data .data-info .value {
+  color: #FFFFFF;
+}
+
+body.dark .dashboard .full-chart {
+  background: #343434;
+}
+
+body.dark .room-block {
+  background: #676767;
+  color: #FFFFFF;
+}
+
+body.dark .limit-block {
+  background: #676767;
+  color: #FFFFFF;
+}
+
+body.dark .theme-switcher {
+  color: #dfdfdf;
+}
+
+body.dark .theme-switcher .switch .slider {
+  background-color: #ccc;
+}
+
+body.dark .theme-switcher .switch input:checked + .slider {
+  background-color: #FC5C7D;
+}
+
+body.dark .theme-switcher .switch input:focus + .slider {
+  box-shadow: 0 0 1px #FC5C7D;
+}
+
+body.dark .add-sensor_form {
+  background: #343434;
+}
+
+body.dark .welasensor-info-name {
+  color: #FDFDFD;
+}
+
+body.dark .sensors a {
+  background: #111111;
+}
+
+body.dark .sensors a.active {
+  background: #676767;
+}
+
+body.light {
+  background-color: #dfdfdf;
+}
+
+body.light main.app {
+  background: #dfdfdf;
+}
+
+body.light main.app h1,
+body.light main.app p {
+  color: #2A2A2A;
+}
+
+body.light main.app .form-content form input:not([type=checkbox]) {
+  background: #eeeeee;
+  color: #2A2A2A;
+}
+
+body.light main.app .form-content form input:not([type=checkbox])::-webkit-input-placeholder {
+  color: #777777;
+}
+
+body.light main.app .form-content form input:not([type=checkbox])::-moz-placeholder {
+  color: #777777;
+}
+
+body.light main.app .form-content form input:not([type=checkbox]):-ms-input-placeholder {
+  color: #777777;
+}
+
+body.light main.app .form-content form input:not([type=checkbox])::-ms-input-placeholder {
+  color: #777777;
+}
+
+body.light main.app .form-content form input:not([type=checkbox])::placeholder {
+  color: #777777;
+}
+
+body.light main.app .form-content .custom-select .select-selected {
+  background: #bbbbbb;
+  color: #2A2A2A;
+}
+
+body.light .app-aside {
+  background: #aaaaaa;
+}
+
+body.light .app-aside a:not(.btn) {
+  color: #2A2A2A;
+}
+
+body.light .app-aside .quick-links a {
+  color: #FFFFFF;
+}
+
+body.light .dashboard .setting-section {
+  background: #cccccc;
+}
+
+body.light .dashboard .last-data .data {
+  background: #cccccc;
+}
+
+body.light .dashboard .last-data .data.active {
+  background: #efefef;
+}
+
+body.light .dashboard .last-data .data-info .name,
+body.light .dashboard .last-data .data-info .value {
+  color: #2a2a2a;
+}
+
+body.light .dashboard .full-chart {
+  background: #eeeeee;
+}
+
+body.light .room-block {
+  background: #aaaaaa;
+  color: #FFFFFF;
+}
+
+body.light .limit-block {
+  background: #aaaaaa;
+  color: #FFFFFF;
+}
+
+body.light .theme-switcher {
+  color: #2a2a2a;
+}
+
+body.light .theme-switcher .switch .slider {
+  background-color: #aaaaaa;
+}
+
+body.light .theme-switcher .switch input:checked + .slider {
+  background-color: #FC5C7D;
+}
+
+body.light .theme-switcher .switch input:focus + .slider {
+  box-shadow: 0 0 1px #FC5C7D;
+}
+
+body.light .add-sensor_form {
+  background: #ffffff;
+}
+
+body.light .add-sensor_form input {
+  background: #eeeeee;
+}
+
+body.light .welasensor-info-name {
+  color: #666666;
+}
+
+body.light .sensors a {
+  background: #ffffff;
+  color: #333333;
+}
+
+body.light .sensors a.active {
+  background: #eeeeee;
+}
+
 .sensors {
   display: flex;
   justify-content: space-between;
@@ -274,7 +505,6 @@ table {
   height: 32px;
   line-height: 32px;
   margin: 0 0 15px 0;
-  background: #111111;
   border-radius: 10px;
   font-weight: 300;
   font-size: 13px;
@@ -301,10 +531,6 @@ table {
 
 .sensors a.offline::after {
   background: #FC5C7D;
-}
-
-.sensors a.active {
-  background: #676767;
 }
 
 @media (max-width: 414px) {
@@ -386,26 +612,6 @@ main.app .form-content form input {
   margin-bottom: 10px;
 }
 
-main.app .form-content form input::-webkit-input-placeholder {
-  color: #aaaaaa;
-}
-
-main.app .form-content form input::-moz-placeholder {
-  color: #aaaaaa;
-}
-
-main.app .form-content form input:-ms-input-placeholder {
-  color: #aaaaaa;
-}
-
-main.app .form-content form input::-ms-input-placeholder {
-  color: #aaaaaa;
-}
-
-main.app .form-content form input::placeholder {
-  color: #aaaaaa;
-}
-
 main.app .form-content form input[name=mac] {
   text-transform: uppercase;
 }
@@ -480,7 +686,6 @@ main.app .form-content form p {
   font-weight: 300;
   font-size: 16.5px;
   line-height: 19px;
-  color: #FDFDFD;
   margin: 4px 0;
 }
 
@@ -506,7 +711,6 @@ main.app .form-content form p {
 
 .sensors-wrapper .sensors-list .add-sensor_form {
   width: 370px;
-  background: #343434;
   border-radius: 20px;
   padding: 30px;
   box-sizing: border-box;
@@ -569,16 +773,11 @@ main.app .form-content form p {
 .dashboard .last-data .data {
   min-width: 224px;
   height: 200px;
-  background: #343434;
   border-radius: 20px;
   margin-right: 100px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-}
-
-.dashboard .last-data .data.active {
-  background: #434343;
 }
 
 .dashboard .last-data .data-graph {
@@ -603,7 +802,6 @@ main.app .form-content form p {
   font-weight: 300;
   font-size: 16.5px;
   line-height: 19px;
-  color: #FFFFFF;
   position: relative;
 }
 
@@ -654,7 +852,6 @@ main.app .form-content form p {
 
 .dashboard .setting-line .setting-section {
   width: 684px;
-  background: #343434;
   border-radius: 20px;
   padding: 30px;
   box-sizing: border-box;
@@ -714,7 +911,6 @@ main.app .form-content form p {
 .dashboard .full-chart {
   width: 100%;
   height: 380px;
-  background: #343434;
   position: relative;
   border-radius: 20px;
 }
@@ -732,7 +928,6 @@ main.app .form-content form p {
 .dashboard .limit-block {
   width: 150px;
   height: 135px;
-  background: #676767;
   border-radius: 10px;
   padding: 10px;
   box-sizing: border-box;
@@ -845,14 +1040,6 @@ main.app .form-content form p {
   height: 0;
 }
 
-.switch input:checked + .slider {
-  background-color: #FC5C7D;
-}
-
-.switch input:focus + .slider {
-  box-shadow: 0 0 1px #FC5C7D;
-}
-
 .switch input:checked + .slider:before {
   transform: translateX(14px);
 }
@@ -891,7 +1078,6 @@ main.app .form-content form p {
   font-size: 18px;
   vertical-align: middle;
   line-height: 30px;
-  color: #dfdfdf;
 }
 
 .slideout-menu {
@@ -957,7 +1143,6 @@ main.app .form-content form p {
 .form-content form input:not([type=checkbox]) {
   width: 320px;
   height: 35px;
-  background: rgba(255, 255, 255, 0.39);
   border-radius: 20px;
   border: medium none;
   font-family: Gilroy;
@@ -973,6 +1158,10 @@ main.app .form-content form p {
 
 .form-content form input:not([type=checkbox]).is-invalid {
   background: rgba(252, 92, 125, 0.3);
+}
+
+.form-content form input:not([type=checkbox]):disabled {
+  color: #888888;
 }
 
 .form-content form .form-row {
@@ -1045,6 +1234,10 @@ main.app .form-content form p {
   margin-bottom: 10px;
 }
 
+.form-aside form .form-row {
+  margin-bottom: 0;
+}
+
 .custom-select {
   position: relative;
   font-family: Gilroy;
@@ -1109,12 +1302,10 @@ main.app .form-content form p {
 .room-block {
   width: 150px;
   height: 135px;
-  background: #676767;
   border-radius: 10px;
   padding: 10px;
   box-sizing: border-box;
   margin: 0 30px 30px 0;
-  color: #FFFFFF;
   position: relative;
 }
 
@@ -1287,7 +1478,6 @@ sub {
   height: 95vh;
   left: 2.5vh;
   top: 2.5vh;
-  background: #000000;
   border-radius: 30px;
   padding: 46px 38px;
   box-sizing: border-box;
@@ -1415,10 +1605,6 @@ main.welcome aside {
   }
 }
 
-main.app {
-  background: #2A2A2A;
-}
-
 @media (max-width: 414px) {
   main.app {
     padding: 7.5px 7.5px 66px;
@@ -1477,8 +1663,8 @@ main h1 {
   font-weight: 600;
   font-size: 31.5px;
   line-height: 38px;
-  color: #FFFFFF;
   margin-bottom: 23px;
+  color: #FFFFFF;
 }
 
 main p {

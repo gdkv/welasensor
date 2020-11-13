@@ -23,7 +23,7 @@
             input:not([type="checkbox"]) {
                 width: 320px;
                 height: 35px;
-                background: rgba(255, 255, 255, 0.39);
+
                 border-radius: 20px;
                 border: medium none;
                 font-family: Gilroy;
@@ -41,6 +41,9 @@
                     background: rgba(252, 92, 125, .3);
                 }
 
+                &:disabled {
+                    color: #888888;
+                }
             }
             .form-row{
                 position: relative;
@@ -113,5 +116,11 @@
             }
         }
     }
-
+    &-aside {
+        form {
+            .form-row {
+                margin-bottom: 0;
+            }
+        }
+    }
 }

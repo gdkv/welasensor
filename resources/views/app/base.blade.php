@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="{{ mix('/assets/css/app.css') }}" type="text/css" />
 </head>
-<body>
+<body class="{{ Auth::user()->darkTheme ? 'dark' : 'light' }}">
 <main id="panel" class="app">
     <aside class="app-aside">
         <div class="top">

@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'fonts';
 @import 'ps';
+@import 'themes';
 @import 'sensors';
 @import 'dashboard';
 @import 'slideout';
@@ -82,7 +83,6 @@ sub {
     height: 95vh;
     left: 2.5vh;
     top: 2.5vh;
-    background: #000000;
     border-radius: 30px;
     padding: 46px 38px;
     box-sizing: border-box;
@@ -210,8 +210,6 @@ main {
     }
 
     &.app {
-        background: #2A2A2A;
-
 
         @media (max-width: 414px) {
             padding: 7.5px 7.5px 66px;
@@ -270,8 +268,8 @@ main {
         font-weight: 600;
         font-size: 31.5px;
         line-height: 38px;
-        color: #FFFFFF;
         margin-bottom: 23px;
+        color: #FFFFFF;
     }
 
     p {
