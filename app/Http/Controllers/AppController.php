@@ -163,10 +163,27 @@ class AppController extends Controller
 
     public function notify(Request $request)
     {
-        if ($request->input('co2') ) {
-            // Save Post data
+        $user = Auth::user();
+        if ($request->input('is-reported') !== null) {
+            $user->isReported = (int)$request->input('is-reported');
         }
 
-        return view('app.notify', ['empty' => true, ]);
+        if ($request->input('is-limits') !== null) {
+            $user->isLimits = (int)$request->input('is-limits');
+        }
+
+        if ($request->input('report-email') ||
+            $request->input('telegram') ||
+            $request->input('alert-email')
+        ) {
+            // Save Post data
+            $user->reportEmail = ($request->input('report-email') ? : $user->reportEmail);
+            $user->telegram = ($request->input('telegram') ? : $user->telegram);
+            $user->alertEmail = ($request->input('alert-email') ? : $user->alertEmail);
+        }
+
+        $user->save();
+
+        return view('app.notify', ['user' => $user, ]);
     }
 }

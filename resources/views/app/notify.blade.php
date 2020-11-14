@@ -14,7 +14,8 @@
                         <div class="form-row">
                             <div class="theme-switcher">
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="hidden" name='is-reported' value="0">
+                                    <input type="checkbox" name="is-reported">
                                     <span class="slider round"></span>
                                 </label>
 
@@ -24,7 +25,7 @@
                         </div>
 
                         <div class="form-row">
-                            <input class="input" placeholder="Email for reports" type="email" name="email" value="" />
+                            <input class="input" placeholder="Email for reports" type="email" name="report-email" value="" />
                             <div class="info-line">
                                 You can set alternative email for welasensor reports, or you can leave this field blank if you want to get reports on email that you leave when register.
                             </div>
@@ -53,7 +54,8 @@
                         <div class="form-row">
                             <div class="theme-switcher">
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="hidden" name='is-limits' value="0">
+                                    <input type="checkbox" name='is-limits'>
                                     <span class="slider round"></span>
                                 </label>
 
@@ -61,7 +63,7 @@
                             </div>
 
                             <div class="form-row">
-                                <input class="input" placeholder="Telegram ID" type="email" name="email" value="" />
+                                <input class="input" placeholder="Telegram ID" type="email" name="telegram" value="" />
                                 <div class="info-line">
                                     Add our <a href="https://t.me/WelasensorBot">@WelasensorBot</a> and paste your Telegram ID there to recive alerts<br />
                                     You can get your ID with <a href="https://t.me/userinfobot">@Userinfobot</a>
@@ -70,7 +72,7 @@
 
 
                             <div class="form-row">
-                                <input class="input" placeholder="Email for reports" type="email" name="email" value="" />
+                                <input class="input" placeholder="Email for alerts" type="email" name="alert-email" value="" />
                                 <div class="info-line">
                                     You can set alternative email for welasensor alerts, or you can leave this field blank if you want to get alerts on email that you leave when register.
                                 </div>
