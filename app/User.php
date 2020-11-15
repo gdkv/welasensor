@@ -23,9 +23,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'plan_id',
         'subscription_at',
         'reportEmail',
+        'alertEmail',
         'darkTheme',
         'lang',
         'isReported',
+        'isAlerted',
     ];
 
     /**

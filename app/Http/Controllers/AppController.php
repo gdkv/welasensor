@@ -168,8 +168,8 @@ class AppController extends Controller
             $user->isReported = (int)$request->input('is-reported');
         }
 
-        if ($request->input('is-limits') !== null) {
-            $user->isLimits = (int)$request->input('is-limits');
+        if ($request->input('is-alerted') !== null) {
+            $user->isAlerted = (int)$request->input('is-alerted');
         }
 
         if ($request->input('report-email') ||

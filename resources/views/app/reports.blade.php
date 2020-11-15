@@ -10,7 +10,10 @@
 
         <div class="setting-line">
             <div class="setting-section">
-                <h3>Periodicity</h3>
+                <h3>
+                    Periodicity
+                    <span class="tag">soon</span>
+                </h3>
 
                 <div class="limit wrapper">
 
@@ -25,7 +28,10 @@
 
         <div class="setting-line">
             <div class="setting-section">
-                <h3>Format</h3>
+                <h3>
+                    Format
+                    <span class="tag">soon</span>
+                </h3>
 
                 <div class="limit wrapper">
                     @include('app.partials.plan', ['title' => 'All', 'description' => 'CSV',  'suffix' => '', 'isCurrent' => true ])
