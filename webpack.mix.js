@@ -10,6 +10,7 @@ mix.js([
     'resources/js/select.js',
     'resources/js/accordion.js',
     'resources/js/password.js',
+    'resources/js/sortable.js',
     'resources/js/app.js',
 ], 'public/assets/js/app.js');
 

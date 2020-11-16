@@ -11,7 +11,7 @@ class Sensor extends Model
     protected $table = 'sensor';
 
     protected $fillable = [
-        'name', 'mac'
+        'name', 'mac', 'priority',
     ];
 
     public function scopeUser($query)

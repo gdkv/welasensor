@@ -11,7 +11,7 @@ class SensorController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified'], ['except' => 'sort']);
     }
 
     public function index()
@@ -37,6 +37,20 @@ class SensorController extends Controller
             return redirect(route('sensors_list'))->with('status', 'Sensor added!');
         }
         return redirect(route('sensors_list'))->with('status', 'Mac address is not valid!');
+    }
+
+    public function sort(Request $request)
+    {
+        // get sensors in right order
+        $sensorsOrder = $request->input('sensors');
+
+        // foreach ($sensorsOrder as $order => $sensorId) {
+        //     $sensor = Sensor::find($sensorId);
+        //     $sensor->priority = $order;
+        //     $sensor->save();
+        // }
+
+        return response()->json(['status' => 'Ok', 'sensors' => $sensorsOrder, ]);
     }
 
     public function data(Request $request, $id, $type)

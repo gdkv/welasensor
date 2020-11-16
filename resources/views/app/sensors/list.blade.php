@@ -8,7 +8,7 @@
                 @include('app.partials.add_sensor')
             </div>
             @foreach($sensors as $sensor)
-                <div class="item">
+                <div class="item" data-sensor-id="{{$sensor->id}}" data-sensor-priority="{{$sensor->priority}}">
                     <a href="{{ route('sensor_view', $sensor->id) }}">
                         <div class="welasensor">
                             <div class="corpus">
