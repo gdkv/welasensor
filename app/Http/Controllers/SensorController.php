@@ -17,7 +17,7 @@ class SensorController extends Controller
     public function index()
     {
         return view('app.sensors.list', [
-            'sensors' => Sensor::user()->get(),
+            'sensors' => Sensor::user()->orderBy('priority', 'asc')->get(),
         ]);
     }
 
@@ -43,14 +43,14 @@ class SensorController extends Controller
     {
         // get sensors in right order
         $result = [];
-        $orderPrefix = 100;
+        $orderPrefix = 101; // make 101, for new sensors stay first
         $sensorsOrder = $request->input('sensors');
 
         foreach ($sensorsOrder as $order => $sensorId) {
             $sensor = Sensor::find($sensorId);
             $newPriority = $orderPrefix + $order;
-            // $sensor->priority = $order;
-            // $sensor->save();
+            $sensor->priority = $newPriority;
+            $sensor->save();
             $result[] = ['id' => $sensor->id, 'order' => $newPriority, ];
         }
 

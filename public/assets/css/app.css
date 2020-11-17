@@ -300,6 +300,10 @@ body.dark main.app .form-content form input:not([type=checkbox])::placeholder {
   color: #aaaaaa;
 }
 
+body.dark main.app .alert p {
+  color: #dfdfdf;
+}
+
 body.dark .app-aside {
   background: #000000;
 }
@@ -412,6 +416,10 @@ body.light main.app .form-content form input:not([type=checkbox])::placeholder {
 body.light main.app .form-content .custom-select .select-selected {
   background: #bbbbbb;
   color: #2A2A2A;
+}
+
+body.light main.app .alert p {
+  color: #dfdfdf;
 }
 
 body.light .app-aside {
@@ -656,9 +664,47 @@ main.app .form-content form p {
   margin-top: 5px;
 }
 
-.sensors-wrapper .sensors-list {
+.sensors-wrapper {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sensors-wrapper .add-sensor_form {
+  width: 370px;
+  border-radius: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  margin-right: 65px;
+}
+
+@media (max-width: 414px) {
+  .sensors-wrapper .add-sensor_form {
+    width: 100%;
+    padding: 10px;
+    margin-right: 0;
+  }
+}
+
+.sensors-wrapper .add-sensor_form h1 {
+  font-family: Gilroy;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: #6A82FB;
+}
+
+@media (max-width: 414px) {
+  .sensors-wrapper .add-sensor_form input {
+    width: 100%;
+  }
+}
+
+.sensors-wrapper .sensors-list {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -667,6 +713,18 @@ main.app .form-content form p {
   width: 166px;
   margin-bottom: 40px;
   margin-right: 65px;
+  position: relative;
+}
+
+.sensors-wrapper .sensors-list .item-priority {
+  background-image: url("/assets/images/SORT.svg");
+  width: 21px;
+  height: 25px;
+  cursor: move;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
 }
 
 .sensors-wrapper .sensors-list .item .welasensor-info {
@@ -706,37 +764,6 @@ main.app .form-content form p {
   .sensors-wrapper .sensors-list .item .welasensor-info {
     margin-left: 20px;
     text-align: left;
-  }
-}
-
-.sensors-wrapper .sensors-list .add-sensor_form {
-  width: 370px;
-  border-radius: 20px;
-  padding: 30px;
-  box-sizing: border-box;
-  margin-bottom: 40px;
-  margin-right: 65px;
-}
-
-@media (max-width: 414px) {
-  .sensors-wrapper .sensors-list .add-sensor_form {
-    width: 100%;
-    padding: 10px;
-    margin-right: 0;
-  }
-}
-
-.sensors-wrapper .sensors-list .add-sensor_form h1 {
-  font-family: Gilroy;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 31px;
-  color: #6A82FB;
-}
-
-@media (max-width: 414px) {
-  .sensors-wrapper .sensors-list .add-sensor_form input {
-    width: 100%;
   }
 }
 
@@ -1165,6 +1192,7 @@ main.app .form-content form p {
   margin-bottom: 27px;
   padding: 0 22px 0;
   box-sizing: border-box;
+  z-index: 9;
 }
 
 .form-content form input:not([type=checkbox]).is-invalid {

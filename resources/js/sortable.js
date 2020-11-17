@@ -6,15 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let sortable = new Sortable(sensorsList, {
         filter: '.add-sensor_form', // is not draggable
-
-        onSort: function (/**Event*/ evt) {
-            // same properties as onEnd
-            console.log('finished');
-            console.log(evt.to);
+        handle: '.item-priority',
+        onSort: function (evt) {
+            let result = [];
+            const list = evt.to.querySelectorAll(".item");
+            for (let item of list) {
+                result.push(item.dataset.sensorId);
+            }
 
             axios.post('/app/sensor/sort', {
-                firstName: 'Fred',
-                lastName: 'Flintstone'
+                sensors: result
             }).then(function (response) {
                 console.log(response);
             });

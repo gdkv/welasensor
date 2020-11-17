@@ -20,9 +20,9 @@ class AppController extends Controller
     {
         if (count(Sensor::user()->get())){
             // Show all data from 1 sensor
-            $firstSensor = Sensor::user()->first();
+            $firstSensor = Sensor::user()->orderBy('priority', 'asc')->first();
             return view('app.index', [
-                'sensors' => Sensor::user()->get(), // all User sensors
+                'sensors' => Sensor::user()->orderBy('priority', 'asc')->get(), // all User sensors
                 'dataSensor' => $firstSensor, // get First sensor Data
                 'measure' => $firstSensor->lastData(), // get First sensor 1 LAST measure Data
                 'miniChartsData' => [

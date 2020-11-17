@@ -3,12 +3,16 @@
     <h1>Your sensors</h1>
 
     <div class="sensors-wrapper">
+
+        <div class="add-sensor_form">
+            @include('app.partials.add_sensor')
+        </div>
+
         <div class="sensors-list">
-            <div class="add-sensor_form">
-                @include('app.partials.add_sensor')
-            </div>
+
             @foreach($sensors as $sensor)
                 <div class="item" data-sensor-id="{{$sensor->id}}" data-sensor-priority="{{$sensor->priority}}">
+                    <div class="item-priority"></div>
                     <a href="{{ route('sensor_view', $sensor->id) }}">
                         <div class="welasensor">
                             <div class="corpus">
