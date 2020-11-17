@@ -42,15 +42,19 @@ class SensorController extends Controller
     public function sort(Request $request)
     {
         // get sensors in right order
+        $result = [];
+        $orderPrefix = 100;
         $sensorsOrder = $request->input('sensors');
 
-        // foreach ($sensorsOrder as $order => $sensorId) {
-        //     $sensor = Sensor::find($sensorId);
-        //     $sensor->priority = $order;
-        //     $sensor->save();
-        // }
+        foreach ($sensorsOrder as $order => $sensorId) {
+            $sensor = Sensor::find($sensorId);
+            $newPriority = $orderPrefix + $order;
+            // $sensor->priority = $order;
+            // $sensor->save();
+            $result[] = ['id' => $sensor->id, 'order' => $newPriority, ];
+        }
 
-        return response()->json(['status' => 'Ok', 'sensors' => $sensorsOrder, ]);
+        return response()->json(['status' => 'Ok', 'sensors' => $sensorsOrder, 'order' => $result, ]);
     }
 
     public function data(Request $request, $id, $type)
