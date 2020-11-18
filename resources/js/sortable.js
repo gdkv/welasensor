@@ -17,7 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
             axios.post('/app/sensor/sort', {
                 sensors: result
             }).then(function (response) {
-                console.log(response);
+                let alert = document.createElement("div");
+                alert.classList.add("alert");
+                alert.innerHTML = "<p>Sensors order is changed!</p>"
+                document.querySelector(".content").appendChild(alert);
+                setTimeout(function () {
+                    alert.parentNode.removeChild(alert);
+                }, 6000);
             });
         },
     });

@@ -280,19 +280,11 @@ body.dark main.app .form-content form input:not([type=checkbox]) {
   background: rgba(255, 255, 255, 0.39);
 }
 
-body.dark main.app .form-content form input:not([type=checkbox])::-webkit-input-placeholder {
-  color: #aaaaaa;
-}
-
 body.dark main.app .form-content form input:not([type=checkbox])::-moz-placeholder {
   color: #aaaaaa;
 }
 
 body.dark main.app .form-content form input:not([type=checkbox]):-ms-input-placeholder {
-  color: #aaaaaa;
-}
-
-body.dark main.app .form-content form input:not([type=checkbox])::-ms-input-placeholder {
   color: #aaaaaa;
 }
 
@@ -393,19 +385,11 @@ body.light main.app .form-content form input:not([type=checkbox]) {
   color: #2A2A2A;
 }
 
-body.light main.app .form-content form input:not([type=checkbox])::-webkit-input-placeholder {
-  color: #777777;
-}
-
 body.light main.app .form-content form input:not([type=checkbox])::-moz-placeholder {
   color: #777777;
 }
 
 body.light main.app .form-content form input:not([type=checkbox]):-ms-input-placeholder {
-  color: #777777;
-}
-
-body.light main.app .form-content form input:not([type=checkbox])::-ms-input-placeholder {
   color: #777777;
 }
 
@@ -490,7 +474,8 @@ body.light .add-sensor_form input {
 }
 
 body.light .welasensor-info-name {
-  color: #666666;
+  color: #fff;
+  background-image: linear-gradient(110deg, transparent 10%, #FC5C7D 10%, #FC5C7D 90%, transparent 90%);
 }
 
 body.light .sensors a {
@@ -561,12 +546,35 @@ body.light .sensors a.active {
 
 .welasensor .corpus {
   position: absolute;
-  background: 75px 0/auto 50px no-repeat url(/assets/images/LOGO_on_welasensor.png) #FDFDFD;
+  background: 58px 71px/auto 64px no-repeat url(/assets/images/LOGO_colored.png) #FDFDFD;
   width: 166px;
   height: 130.94px;
   left: 0;
   bottom: 0;
   border-radius: 30px;
+  box-shadow: 0 2px 10px 0 #aeaeae;
+}
+
+.welasensor .badge {
+  width: 32px;
+  height: 18px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  text-align: center;
+  line-height: 18px;
+  right: 10px;
+  position: absolute;
+}
+
+.welasensor .badge-co2 {
+  top: 10px;
+  background-image: linear-gradient(90deg, #6b80fa, rgba(107, 128, 250, 0.6) 100%);
+}
+
+.welasensor .badge-no2 {
+  top: 30px;
+  background-image: linear-gradient(90deg, #a173ca, rgba(161, 115, 202, 0.6) 100%);
 }
 
 .welasensor .plug {
@@ -624,19 +632,11 @@ main.app .form-content form input[name=mac] {
   text-transform: uppercase;
 }
 
-main.app .form-content form input[name=mac]::-webkit-input-placeholder {
-  text-transform: none;
-}
-
 main.app .form-content form input[name=mac]::-moz-placeholder {
   text-transform: none;
 }
 
 main.app .form-content form input[name=mac]:-ms-input-placeholder {
-  text-transform: none;
-}
-
-main.app .form-content form input[name=mac]::-ms-input-placeholder {
   text-transform: none;
 }
 
@@ -667,12 +667,13 @@ main.app .form-content form p {
 .sensors-wrapper {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .sensors-wrapper .add-sensor_form {
   width: 370px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 20px;
   padding: 30px;
   box-sizing: border-box;
@@ -728,7 +729,7 @@ main.app .form-content form p {
 }
 
 .sensors-wrapper .sensors-list .item .welasensor-info {
-  margin-top: 8px;
+  margin-top: 12px;
   text-align: center;
 }
 
@@ -1040,7 +1041,7 @@ main.app .form-content form p {
 }
 
 .alert {
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 15px;
   background-color: #FC5C7D;

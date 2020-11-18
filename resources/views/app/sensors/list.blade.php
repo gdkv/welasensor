@@ -17,6 +17,8 @@
                         <div class="welasensor">
                             <div class="corpus">
                                 <div class="indicator"></div>
+                                <div class="badge badge-co2">CO<sub>2</sub></div>
+                                <div class="badge badge-no2">NO<sub>2</sub></div>
                             </div>
                             <div class="plug"></div>
                         </div>
