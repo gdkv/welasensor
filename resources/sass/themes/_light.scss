@@ -125,5 +125,11 @@ body {
                 }
             }
         }
+
+        #mobile-menu {
+            &.app-mobile-menu {
+                background-color: #dfdfdf;
+            }
+        }
     }
 }

@@ -484,14 +484,12 @@ main {
 }
 
 #mobile-menu {
-    //display: none;
     box-shadow: -5px 0 30px #aeaeae inset;
     padding: 7.5px;
     box-sizing: border-box;
 
     &.app-mobile-menu {
         box-shadow: none;
-        background-color: #2A2A2A;
 
         .app-aside {
             display: block;
