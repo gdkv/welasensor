@@ -62,7 +62,7 @@ class SensorController extends Controller
         // Current sensor data
         $currentSensor = Sensor::findOrFail($id);
         return view('app.index', [
-            'sensors' => Sensor::user()->get(),
+            'sensors' => Sensor::user()->orderBy('priority', 'asc')->get(),
             'dataSensor' => $currentSensor,
             'measure' => $currentSensor->lastData(),
             'miniChartsData' => [
