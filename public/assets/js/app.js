@@ -53362,41 +53362,44 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")["d
 
 document.addEventListener("DOMContentLoaded", function () {
   var sensorsList = document.querySelector('.sensors-list');
-  var sortable = new sortablejs__WEBPACK_IMPORTED_MODULE_0__["default"](sensorsList, {
-    filter: '.add-sensor_form',
-    // is not draggable
-    handle: '.item-priority',
-    onSort: function onSort(evt) {
-      var result = [];
-      var list = evt.to.querySelectorAll(".item");
 
-      var _iterator = _createForOfIteratorHelper(list),
-          _step;
+  if (typeof sensorsList != 'undefined' && sensorsList != null) {
+    var sortable = new sortablejs__WEBPACK_IMPORTED_MODULE_0__["default"](sensorsList, {
+      filter: '.add-sensor_form',
+      // is not draggable
+      handle: '.item-priority',
+      onSort: function onSort(evt) {
+        var result = [];
+        var list = evt.to.querySelectorAll(".item");
 
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var item = _step.value;
-          result.push(item.dataset.sensorId);
+        var _iterator = _createForOfIteratorHelper(list),
+            _step;
+
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var item = _step.value;
+            result.push(item.dataset.sensorId);
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
         }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
 
-      axios.post('/app/sensor/sort', {
-        sensors: result
-      }).then(function (response) {
-        var alert = document.createElement("div");
-        alert.classList.add("alert");
-        alert.innerHTML = "<p>Sensors order is changed!</p>";
-        document.querySelector(".content").appendChild(alert);
-        setTimeout(function () {
-          alert.parentNode.removeChild(alert);
-        }, 6000);
-      });
-    }
-  });
+        axios.post('/app/sensor/sort', {
+          sensors: result
+        }).then(function (response) {
+          var alert = document.createElement("div");
+          alert.classList.add("alert");
+          alert.innerHTML = "<p>Sensors order is changed!</p>";
+          document.querySelector(".content").appendChild(alert);
+          setTimeout(function () {
+            alert.parentNode.removeChild(alert);
+          }, 6000);
+        });
+      }
+    });
+  }
 });
 
 /***/ }),

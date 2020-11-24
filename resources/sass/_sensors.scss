@@ -179,6 +179,10 @@ main {
     // align-items: center;
     // flex-wrap: wrap;
 
+    @media (max-width: 414px) {
+        display: block;
+    }
+
     .add-sensor_form {
         width: 370px;
         // height: 350px;

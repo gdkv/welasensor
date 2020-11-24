@@ -113,6 +113,12 @@ body {
         .welasensor-info-name {
             color: #fff;
             background-image: linear-gradient(110deg, transparent 10%, #FC5C7D 10%,#FC5C7D 90%, transparent 90%);
+
+            @media (max-width: 414px) {
+                background-image: none;
+                color: #555555;
+                text-shadow: 0 2px 30px #FC5C7D;
+            }
         }
 
         .sensors {
