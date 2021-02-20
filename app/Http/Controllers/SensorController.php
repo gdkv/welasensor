@@ -123,8 +123,37 @@ class SensorController extends Controller
 
     public function measures(Request $request, $id, $type)
     {
+        /**
+         * Нужно переписать!
+         * Нужно передавать еще $period - размер отображаемых данных
+         * Запрашивать из Базы данные по этому периоду
+         * Что то вроде этого:
+         *
+         * SELECT
+         * 	count(*),
+         * 	date_format(created_at, '%Y%m%d %H:00') as day,
+         * 	AVG(temperature)
+         * FROM data
+         * WHERE sensor_mac = "a0-20-a6-08-92-50"
+         * GROUP BY date_format(created_at, '%Y%m%d %H:00')
+         * ORDER BY date_format(created_at, '%Y%m%d %H:00') DESC
+         *
+         * В итоге в результирующем массиве должны появится null в те часы когда
+         * данные не приходили и в строящихся графиках должны появится
+         * дыры как к примеру тут
+         *
+         * https://stackoverflow.com/questions/34516224/not-drawing-null-values-using-chart-js
+         *
+         */
+
         return response()
-            ->json(Sensor::findOrFail($id)->sensorData()->pluck($type)->take(-100)->toArray());
+            ->json(
+                Sensor::findOrFail($id)
+                ->sensorData()
+                ->pluck($type)
+                ->take(-100)
+                ->toArray()
+            );
     }
 
     private function getColorByType($type): string
