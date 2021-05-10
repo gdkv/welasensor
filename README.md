@@ -1,6 +1,6 @@
 ## Welasensor
 
-<img src="https://hb.bizmrg.com/wela/wela.png" />
+<img src="https://storage.yandexcloud.net/welasensor/cover.png" />
 
 Микроклимат вашего дома, предприятия, складского помещения, офиса в режиме реального 
 времени прямо у вас на мониторе любого девайса
