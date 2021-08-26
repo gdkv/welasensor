@@ -4,7 +4,7 @@
             Create your account
         </div>
         <div class="form-content">
-            <form method="POST" action="{{ route('register') }}">
+            <form >
                 @csrf
                 @honeypot
                 <div class="form-row">

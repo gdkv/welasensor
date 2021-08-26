@@ -23,9 +23,9 @@ Route::get('/login', function () {
     return view('main.index');
 })->name('login');
 
-Route::get('/register', function () {
-    return view('main.index');
-})->name('register');
+// Route::get('/register', function () {
+//     return view('main.index');
+// })->name('register');
 
 Route::get('/logout', function (){
     Auth::logout();

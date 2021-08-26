@@ -16,7 +16,9 @@
             @enderror
             <form method="POST" action="{{ route('login') }}">
                 @csrf
+                @honeypot
                 <input type="hidden" value="1" name="remember" />
+
                 <div class="form-row">
                     <input id="email" type="email" placeholder="Email"  class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 </div>
@@ -29,13 +31,13 @@
 
                 <button type="submit">Sign in</button>
 
-                @if (Route::has('password.request'))
+                @if (false && Route::has('password.request'))
                     <a href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
                 @endif
 
-                @if (Route::has('register'))
+                @if (false && Route::has('register'))
                     <a href="{{ route('register') }}">
                         Don't have account? Sign up
                     </a>
